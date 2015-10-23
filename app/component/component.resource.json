@@ -1,0 +1,76 @@
+{
+  "get": {
+    "url": "/network/cellulars",
+    "type": "collection",
+    "titlePrefix": "cellular"
+  },
+  "put": {
+    "url": "/network/cellulars/:id",
+    "type": "model"
+  },
+  "fields": [
+    {
+      "key": "enable",
+      "type": "switch",
+      "templateOptions": {
+        "label": "CELLULAR_FORM_LABEL_ENABLE"
+      }
+    },
+    {
+      "key": "apn",
+      "type": "input",
+      "templateOptions": {
+        "label": "CELLULAR_FORM_LABEL_APN"
+      }
+    },
+    {
+      "key": "pinCode",
+      "type": "input",
+      "templateOptions": {
+        "label": "CELLULAR_FORM_LABEL_PINCODE"
+      }
+    },
+    {
+      "key": "enableAuth",
+      "type": "switch",
+      "templateOptions": {
+        "label": "CELLULAR_FORM_LABEL_ENABLE_AUTH"
+      }
+    },
+    {
+      "key": "authType",
+      "type": "select",
+      "templateOptions": {
+        "lable": "CELLULAR_FORM_LABEL_AUTH_TYPE",
+        "options": [
+          {
+            "label": "CELLULAR_FORM_LABEL_PAP",
+            "value": "PAP"
+          },
+          {
+            "label": "CELLULAR_FORM_LABEL_CHAP",
+            "value": "CHAP"
+          }
+        ]
+      },
+      "hideExpression": "!model.enableAuth"
+    },
+    {
+      "key": "username",
+      "type": "input",
+      "templateOptions": {
+        "label": "CELLULAR_FORM_LABEL_USER_NAME"
+      },
+      "hideExpression": "!model.enableAuth"
+    },
+    {
+      "key": "password",
+      "type": "password",
+      "templateOptions": {
+        "label": "CELLULAR_FORM_LABEL_PASSWORD"
+      },
+      "hideExpression": "!model.enableAuth"
+    }
+  ]
+}
+
