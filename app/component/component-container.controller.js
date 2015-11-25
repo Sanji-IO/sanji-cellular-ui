@@ -1,23 +1,31 @@
-const $inject = ['sanjiWindowService', 'cellularService'];
+const $inject = ['$scope', 'sanjiWindowService', 'cellularService'];
+const WINDOW_ID = 'sanji-cellular-ui';
 class CellularContainerController {
   constructor(...injects) {
     CellularContainerController.$inject.forEach((item, index) => this[item] = injects[index]);
 
-    const WINDOW_ID = 'sanji-cellular-ui';
-    const EDIT_STATE = 'sanji-edit';
-    let cellularService = this.cellularService;
-    let sanjiWindowMgr = this.sanjiWindowService.get(WINDOW_ID);
+    this.sanjiWindowMgr = this.sanjiWindowService.get(WINDOW_ID);
+    this.data = this.cellularService.data;
 
-    this.data = cellularService.data;
+    this.activate();
 
-    this.cellularService.get().then(() => {
-      this.data = cellularService.data;
-      sanjiWindowMgr.navigateTo(EDIT_STATE);
+    this.$scope.$on('sj:window:refresh', this.onRefresh.bind(this))
+  }
+
+  activate() {
+    this.sanjiWindowMgr.promise = this.cellularService.get().then(() => {
+      this.data = this.cellularService.data;
     });
   }
 
+  onRefresh(event, args) {
+    if (args.id === WINDOW_ID) {
+      this.activate();
+    }
+  }
+
   onSave(data) {
-    this.cellularService.update(data);
+    this.sanjiWindowMgr.promise = this.cellularService.update(data);
   }
 }
 CellularContainerController.$inject = $inject;
