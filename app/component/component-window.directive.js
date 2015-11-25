@@ -10,7 +10,7 @@ class CellularWindowDirective {
     this.template = `<sanji-window window-id="sanji-cellular-ui"
                       window-name="{{'CELLULAR' | translate}}" show-loading-btn>
                       <sanji-window-state default-state
-                        state-name="sanji-info"
+                        state-name="sanji-form"
                         link-name="{{'CELLULAR_FORM_SETTING' | translate}}"
                         icon="settings">
                         <sanji-cellular-container></sanji-cellular-container>
