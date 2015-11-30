@@ -1,6 +1,6 @@
 {
   "name": "sanji-cellular-ui",
-  "main": "index",
+  "main": "dist/sanji-cellular-ui.js",
   "config": {
     "ghooks": {
       "pre-commit": ""
