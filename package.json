@@ -75,11 +75,7 @@
   "keywords": [
     "sanji"
   ],
-  "author": {
-    "name": "Zack Yang",
-    "email": "zack9433@gmail.com",
-    "url": "https://github.com/zack9433"
-  },
+  "author": "Zack Yang <zack9433@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/Sanji-IO/sanji-cellular-ui",
   "dependencies": {
