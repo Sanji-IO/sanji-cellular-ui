@@ -1,6 +1,9 @@
 {
   "name": "sanji-cellular-ui",
-  "main": "dist/sanji-cellular-ui.js",
+  "author": "Zack Yang <zack9433@gmail.com> (https://github.com/zack9433)",
+  "description": "Sanji cellualr UI",
+  "version": "0.0.0-semantic-released",
+  "main": "index",
   "config": {
     "ghooks": {
       "pre-commit": ""
@@ -75,7 +78,6 @@
   "keywords": [
     "sanji"
   ],
-  "author": "Zack Yang <zack9433@gmail.com> (https://github.com/zack9433)",
   "license": "MIT",
   "homepage": "https://github.com/Sanji-IO/sanji-cellular-ui",
   "dependencies": {
