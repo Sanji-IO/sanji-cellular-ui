@@ -1,0 +1,215 @@
+// reference from http://codepen.io/shorepound/details/GpXVwW/
+
+.cellular-signal {
+  margin: 0 auto;
+  width: 75%;
+
+  .progress-meter {
+    padding: 30px;
+    width: 280px;
+    border: 1px solid #bbb;
+    border-radius: 7px;
+    margin: 50px auto;
+    position: relative;
+  }
+
+  .signal-bar-top {
+    width: 0px;
+    height: 0px;
+    border-bottom: 18px solid #eee;
+    border-left: 30px solid transparent;
+    position: relative;
+    top: -17px;
+  }
+
+  .signal-bars {
+    position: relative;
+    width: 160px;
+    height: 210px;
+  }
+
+  .signal-bars .signal-bar {
+    position: absolute;
+    bottom: 0;
+    border-radius: 3px;
+    width: 30px;
+  }
+
+  .signal-bars .signal-bar:nth-child(1) {
+    background: #eee;
+    height: 20px;
+    left: 0px;
+  }
+
+  .signal-bars .signal-bar:nth-child(2) {
+    background: #eee;
+    height: 40px;
+    left: 35px;
+  }
+
+  .signal-bars .signal-bar:nth-child(3) {
+    background: #eee;
+    height: 60px;
+    left: 70px;
+  }
+
+  .signal-bars .signal-bar:nth-child(4) {
+    background: #eee;
+    height: 80px;
+    left: 105px;
+  }
+
+  .signal-bars .signal-bar:nth-child(5) {
+    background: #eee;
+    height: 100px;
+    left: 140px;
+  }
+
+  .signal-bars .signal-bar:nth-child(6) {
+    background: #eee;
+    height: 120px;
+    left: 175px;
+  }
+
+  .signal-bars .signal-bar:nth-child(7) {
+    background: #eee;
+    height: 140px;
+    left: 210px;
+  }
+
+  .signal-bars .signal-bar:nth-child(8) {
+    background: #eee;
+    height: 160px;
+    left: 245px;
+  }
+
+  .circle {
+    border: 6px solid #bdbdbd;
+    border-radius: 50%;
+    position: absolute;
+    left: -57px;
+    top: 80px;
+    background: #fff;
+    -webkit-box-shadow: 0 0 1px 0px rgb( 255, 255, 255);
+    box-shadow: 0 0 1px 0px rgb( 255, 255, 255);
+    width: 100px;
+    height: 100px;
+    z-index: 86;
+    -webkit-transition: background-color .5s ease-in-out;
+    -moz-transition: background-color .5s ease-in-out;
+    -o-transition: background-color .5s ease-in-out;
+    -ms-transition: background-color .5s ease-in-out;
+    transition: background-color .5s ease-in-out;
+  }
+
+  .circle-text {
+    position: relative;
+    top: 25px;
+    text-align: center;
+    color: #666;
+    font-weight: bold;
+    font-size: 30px;
+  }
+
+  .circle-text-under {
+    font-size: 18px;
+  }
+
+  .completed {
+    background: #090 !important;
+  }
+
+  .top-completed {
+    border-bottom: 18px solid #090 !important;
+  }
+
+  .ten-percent {
+    background: #df4229 !important;
+  }
+
+  .ten-percent-top {
+    border-bottom: 18px solid #df4229 !important;
+  }
+
+  .twenty-percent {
+    background: #eb5338 !important;
+  }
+
+  .twenty-percent-top {
+    border-bottom: 18px solid #eb5338 !important;
+  }
+
+  .thirty-percent {
+    background: #f46a3f !important;
+  }
+
+  .thirty-percent-top {
+    border-bottom: 18px solid #f46a3f !important;
+  }
+
+  .fifty-percent {
+    background: #fa8342 !important;
+  }
+
+  .fifty-percent-top {
+    border-bottom: 18px solid #fa8342 !important;
+  }
+
+  .sixty-percent {
+    background: #e69230 !important;
+  }
+
+  .sixty-percent-top {
+    border-bottom: 18px solid #e4913c !important;
+  }
+
+  .eighty-percent {
+    background: #a69b40 !important;
+  }
+
+  .eighty-percent-top {
+    border-bottom: 18px solid #a69d40 !important;
+  }
+
+  .ninety-percent {
+    background: #82a33e !important;
+  }
+
+  .ninety-percent-top {
+    border-bottom: 18px solid #82a33e !important;
+  }
+
+  .one-hundered-percent {
+    background: #54ac56 !important;
+  }
+
+  .one-hundered-percent-top {
+    border-bottom: 18px solid #54ac56 !important;
+  }
+
+  .meter-text {
+    text-transform: uppercase;
+    position: relative;
+    left: 15px;
+    color: #666;
+  }
+
+  .horizontal-bars {
+    top: 20px;
+    left: 12px;
+    position: absolute;
+    width: 315px;
+    height: 200px;
+  }
+
+  .horizontal-bar {
+    border-bottom: 1px solid #ccc;
+    height: 45px;
+    width: 100%;
+  }
+
+  .the-form {
+    text-align: center;
+  }
+}
+

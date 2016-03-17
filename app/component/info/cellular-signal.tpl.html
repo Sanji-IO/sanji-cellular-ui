@@ -1,0 +1,48 @@
+<script type ="text/ng-template" id="sanji-cellular-signal.tpl.html">
+  <!-- reference from http://codepen.io/shorepound/details/GpXVwW/ -->
+  <section class="cellular-signal">
+    <div class="progress-meter">
+      <div class="horizontal-bars">
+        <div class="horizontal-bar"></div>
+        <div class="horizontal-bar"></div>
+        <div class="horizontal-bar"></div>
+        <div class="horizontal-bar"></div>
+        <div class="horizontal-bar"></div>
+      </div>
+      <div class="circle">
+        <div class="circle-text">
+          {{vm.signal}}</br>
+          <span class="circle-text-under">dBm</span>
+        </div>
+      </div>
+      <span class="meter-text" translate="CELLULAR_SIGNAL_CHART_TITLE"></span>
+      <div class="signal-bars">
+        <div class="signal-bar" ng-class="{'ten-percent': -125 <= vm.signal}">
+          <div class="signal-bar-top" ng-class="{'ten-percent-top': -125 <= vm.signal}"></div>
+        </div>
+        <div class="signal-bar" ng-class="{'twenty-percent': -110 <= vm.signal}">
+          <div class="signal-bar-top" ng-class="{'twenty-percent-top': -110 <= vm.signal}"></div>
+        </div>
+        <div class="signal-bar" ng-class="{'thirty-percent': -110 <= vm.signal}">
+          <div class="signal-bar-top" ng-class="{'thirty-percent-top': -110 <= vm.signal}"></div>
+        </div>
+        <div class="signal-bar" ng-class="{'fifty-percent': -90 <= vm.signal}">
+          <div class="signal-bar-top" ng-class="{'fifty-percent-top': -90 <= vm.signal}"></div>
+        </div>
+        <div class="signal-bar" ng-class="{'sixty-percent': -70 <= vm.signal}">
+          <div class="signal-bar-top" ng-class="{'sixty-percent-top': -70 <= vm.signal}"></div>
+        </div>
+        <div class="signal-bar" ng-class="{'eighty-percent': -70 <= vm.signal}">
+          <div class="signal-bar-top" ng-class="{'eighty-percent-top': -70 <= vm.signal}"></div>
+        </div>
+        <div class="signal-bar" ng-class="{'ninety-percent': -60 <= vm.signal}">
+          <div class="signal-bar-top" ng-class="{'ninety-percent-top': -60 <= vm.signal}"></div>
+        </div>
+        <div class="signal-bar" ng-class="{'one-hundred-percent': -60 <= vm.signal}">
+          <div class="signal-bar-top" ng-class="{'one-hundred-percent-top': -60 <= vm.signal}"></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</script>

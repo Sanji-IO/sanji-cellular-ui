@@ -1,0 +1,92 @@
+<script type ="text/ng-template" id="sanji-cellular-info.tpl.html">
+  <md-tabs md-dynamic-height md-border-bottom>
+    <md-tab ng-repeat="tab in vm.tabs track by $index"
+    label="{{::tab.content.name}}">
+      <div class="md-padding">
+        <cellular-signal signal="{{tab.content.signal}}"></cellular-signal>
+      </div>
+      <md-list>
+        <md-subheader class="md-accent">
+          <span translate="CELLULAR_INFO_BASIC"></span>
+        </md-subheader>
+        <md-list-item>
+          <p class="md-body-2" translate="CELLULAR_INFO_CONNECTION_STATUS"></p>
+          <span ng-bind="tab.content.status"></span>
+        </md-list-item>
+        <md-list-item>
+          <p class="md-body-2" translate="CELLULAR_INFO_OPERATOR"></p>
+          <span ng-bind="tab.content.operatorName"></span>
+        </md-list-item>
+        <md-list-item>
+          <p class="md-body-2" translate="CELLULAR_INFO_APN"></p>
+          <span ng-bind="tab.content.apn"></span>
+        </md-list-item>
+        <md-list-item>
+          <p class="md-body-2" translate="CELLULAR_INFO_MODE"></p>
+          <span ng-bind="tab.content.mode"></span>
+        </md-list-item>
+        <md-list-item>
+          <p class="md-body-2" translate="CELLULAR_INFO_LAC"></p>
+          <span ng-bind="tab.content.lac"></span>
+        </md-list-item>
+        <md-list-item>
+          <p class="md-body-2" translate="CELLULAR_INFO_IMEI"></p>
+          <span ng-bind="tab.content.imei"></span>
+        </md-list-item>
+        <md-list-item>
+          <p class="md-body-2" translate="CELLULAR_INFO_PIN_REMAIN_TIME"></p>
+          <span ng-bind="tab.content.pinRetryRemain"></span>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-subheader class="md-accent">
+          <span translate="CELLULAR_INFO_NETWORK"></span>
+        </md-subheader>
+        <md-list-item>
+          <p class="md-body-2" translate="CELLULAR_INFO_IP"></p>
+          <span ng-bind="tab.content.ip"></span>
+        </md-list-item>
+        <md-list-item>
+          <p class="md-body-2" translate="CELLULAR_INFO_NETMASK"></p>
+          <span ng-bind="tab.content.netmask"></span>
+        </md-list-item>
+        <md-list-item>
+          <p class="md-body-2" translate="CELLULAR_INFO_GATEWAY"></p>
+          <span ng-bind="tab.content.gateway"></span>
+        </md-list-item>
+        <md-list-item ng-repeat="dns in tab.content.dns track by $index">
+          <p class="md-body-2">{{'CELLULAR_INFO_DNS' | translate}} {{$index + 1}}</p>
+          <span ng-bind="dns || ''"></span>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-subheader class="md-accent">
+          <span translate="CELLULAR_INFO_USAGE"></span>
+        </md-subheader>
+        <md-list-item>
+          <p class="md-body-2" translate="CELLULAR_INFO_TRANSMIT_USAGE"></p>
+          <span ng-bind="tab.content.usage.txkbyte | kbFmt:0"></span>
+        </md-list-item>
+        <md-list-item>
+          <p class="md-body-2" translate="CELLULAR_INFO_RECEIVE_USAGE"></p>
+          <span ng-bind="tab.content.usage.rxkbyte | kbFmt:0"></span>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-subheader class="md-accent">
+          <span translate="CELLULAR_INFO_KEEPALIVE"></span>
+        </md-subheader>
+        <md-list-item>
+          <p class="md-body-2" translate="CELLULAR_INFO_STATUS"></p>
+          <span ng-bind="tab.content.keepalive.enable"></span>
+        </md-list-item>
+        <md-list-item>
+          <p class="md-body-2" translate="CELLULAR_INFO_TARGET_HOST"></p>
+          <span ng-bind="tab.content.keepalive.targetHost"></span>
+        </md-list-item>
+        <md-list-item>
+          <p class="md-body-2" translate="CELLULAR_INFO_PING_INTERVAL"></p>
+          <span ng-bind="tab.content.keepalive.intervalSec"></span>
+          <span translate="CELLULAR_SEC"></span>
+        </md-list-item>
+      </md-list>
+    </md-tab>
+  </md-tabs>
+</script>
