@@ -2,9 +2,7 @@
   <md-tabs md-dynamic-height md-border-bottom>
     <md-tab ng-repeat="tab in vm.tabs track by $index"
     label="{{::tab.content.name}}">
-      <div class="md-padding">
-        <cellular-signal signal="{{tab.content.signal}}"></cellular-signal>
-      </div>
+      <cellular-signal signal="{{tab.content.signal}}"></cellular-signal>
       <md-list>
         <md-subheader class="md-accent">
           <span translate="CELLULAR_INFO_BASIC"></span>
