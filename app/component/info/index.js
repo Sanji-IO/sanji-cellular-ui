@@ -1,3 +1,4 @@
+import angular from 'angular';
 import sjCore from 'sanji-core-ui';
 
 import './cellular-signal.tpl.html';
