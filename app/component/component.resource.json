@@ -13,35 +13,40 @@
       "key": "enable",
       "type": "switch",
       "templateOptions": {
-        "label": "CELLULAR_FORM_LABEL_ENABLE"
+        "label": "CELLULAR_FORM_LABEL_ENABLE",
+        "required": true
       }
     },
     {
       "key": "apn",
       "type": "input",
       "templateOptions": {
-        "label": "CELLULAR_FORM_LABEL_APN"
+        "label": "CELLULAR_FORM_LABEL_APN",
+        "required": true
       }
     },
     {
       "key": "pinCode",
       "type": "input",
       "templateOptions": {
-        "label": "CELLULAR_FORM_LABEL_PINCODE"
+        "label": "CELLULAR_FORM_LABEL_PINCODE",
+        "required": true
       }
     },
     {
       "key": "keepalive.enable",
       "type": "switch",
       "templateOptions": {
-        "label": "CELLULAR_FORM_LABEL_ENABLE_KEEPALIVE"
+        "label": "CELLULAR_FORM_LABEL_ENABLE_KEEPALIVE",
+        "required": true
       }
     },
     {
       "key": "keepalive.targetHost",
       "type": "input",
       "templateOptions": {
-        "label": "CELLULAR_FORM_LABEL_TARGET_HOST"
+        "label": "CELLULAR_FORM_LABEL_TARGET_HOST",
+        "required": true
       },
       "hideExpression": "!model.keepalive.enable"
     },
@@ -51,7 +56,8 @@
       "templateOptions": {
         "label": "CELLULAR_FORM_LABEL_PING_INTERVAL",
         "min": 0,
-        "max": null
+        "max": null,
+        "required": true
       },
       "hideExpression": "!model.keepalive.enable"
     }
