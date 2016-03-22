@@ -11,6 +11,7 @@ config.entry = {
 };
 config.output.filename = 'sanji-cellular-ui.js';
 config.output.libraryTarget = 'umd';
+config.output.library = 'sjCellular';
 config.externals = [
   'angular',
   'sanji-core-ui'
