@@ -8,7 +8,8 @@
     </md-subheader>
   </div>
   <md-tabs ng-if="0 < vm.tabs.length" md-dynamic-height md-border-bottom>
-    <md-tab ng-repeat="tab in vm.tabs track by $index" label="{{::tab.title}}">
+    <md-tab ng-repeat="tab in vm.tabs track by $index"
+    label="{{::tab.content.name}}">
       <form ng-submit="vm.save(tab)"
         role="form" layout="column" layout-padding novalidate>
           <formly-form model="tab.content"
