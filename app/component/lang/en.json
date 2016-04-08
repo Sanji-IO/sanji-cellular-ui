@@ -31,5 +31,6 @@
   "CELLULAR_INFO_STATUS": "Status",
   "CELLULAR_INFO_TARGET_HOST": "Target Host",
   "CELLULAR_INFO_PING_INTERVAL": "Ping Interval",
-  "CELLULAR_SIGNAL_CHART_TITLE": "Profile Strength Meter"
+  "CELLULAR_SIGNAL_CHART_TITLE": "Profile Strength Meter",
+  "CELLULAR_INFO_NO_MODULE_MSG": "Please insert cellular module."
 }
