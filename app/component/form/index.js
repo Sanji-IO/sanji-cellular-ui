@@ -1,15 +1,15 @@
 import angular from 'angular';
 import sjCore from 'sanji-core-ui';
 
-import './component.tpl.html';
-import CellularFormContainerController from './component-container.controller';
-import CellularFormController from './component.controller';
-import CellularFormContainerDirective from './component-container.directive';
-import CellularFormDirective from './component.directive';
+import './form.tpl.html';
+import CellularFormContainerController from './container.controller';
+import CellularFormController from './form.controller';
+import CellularFormContainerComponent from './container.component';
+import CellularFormComponent from './form.component';
 
 let app = angular.module('sanji.cellular.form', [sjCore]);
 app.controller('CellularFormContainerController', CellularFormContainerController);
 app.controller('CellularFormController', CellularFormController);
-app.directive('sanjiCellularFormContainer', CellularFormContainerDirective.directiveFactory);
-app.directive('sanjiCellularForm', CellularFormDirective.directiveFactory);
-export default app = app.name
+app.component('sanjiCellularFormContainer', CellularFormContainerComponent);
+app.component('sanjiCellularForm', CellularFormComponent);
+export default app = app.name;

@@ -5,7 +5,7 @@ import sjCellularForm from './form';
 
 import i18nConfig from './component.i18n';
 import CellularService from './component.service';
-import CellularWindowDirective from './component-window.directive';
+import CellularWindowComponent from './window.component';
 
 let app = angular.module('sanji.cellular', [
   sjCore,
@@ -14,5 +14,5 @@ let app = angular.module('sanji.cellular', [
 ]);
 app.config(i18nConfig);
 app.service('cellularService', CellularService);
-app.directive('sanjiCellularWindow', CellularWindowDirective.directiveFactory);
-export default app = app.name
+app.component('sanjiCellularWindow', CellularWindowComponent);
+export default app = app.name;
