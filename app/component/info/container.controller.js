@@ -6,13 +6,10 @@ class CellularInfoContainerController {
 
     this.sanjiWindowMgr = this.sanjiWindowService.get(WINDOW_ID);
     this.data = this.cellularService.data;
-
-    this.activate();
-
-    this.$scope.$on('sj:window:refresh', this.onRefresh.bind(this))
+    this.$scope.$on('sj:window:refresh', this.onRefresh.bind(this));
   }
 
-  activate() {
+  $onInit() {
     this.sanjiWindowMgr.promise = this.cellularService.get().then(() => {
       this.data = this.cellularService.data;
     });
@@ -20,7 +17,7 @@ class CellularInfoContainerController {
 
   onRefresh(event, args) {
     if (args.id === WINDOW_ID) {
-      this.activate();
+      this.$onInit();
     }
   }
 }
