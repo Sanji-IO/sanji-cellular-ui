@@ -27,7 +27,6 @@
     "check-coverage": "istanbul check-coverage --statements 75 --branches 75 --functions 75 --lines 75",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "postpublish": "publish-latest",
     "post-install": "webdirver-manager update"
   },
   "devDependencies": {
@@ -71,7 +70,6 @@
     "opt-cli": "~1.5.1",
     "postcss-loader": "~0.9.1",
     "protractor": "~2.5.1",
-    "publish-latest": "~1.1.2",
     "raw-loader": "~0.5.1",
     "sanji-openapi-mock": "github:sanji-io/sanji-openapi-mockserver",
     "sass-loader": "~4.0.0",
