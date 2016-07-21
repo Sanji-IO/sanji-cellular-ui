@@ -33,7 +33,7 @@ exports.config = {
   ],
 
   cucumberOpts: {
-    require: 'features/token.step.js',
+    require: 'features/cellular.step.js',
     format: 'pretty' // or summary
   }
 };

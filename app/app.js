@@ -4,9 +4,9 @@ import 'angular-sanji-window.css';
 import 'toastr.css';
 import './app.scss';
 import angular from 'angular';
-import component from './component';
+import {sjCellular} from './component';
 
-const app = angular.module('webapp', [component]);
+const app = angular.module('webapp', [sjCellular]);
 class AppController {
   constructor($translate, LANG_KEYS) {
     this.$translate = $translate;

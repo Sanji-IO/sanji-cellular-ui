@@ -1,4 +1,6 @@
-const $inject = ['$q', 'rest', 'exception', '_', 'pathToRegexp', '$filter', 'logger'];
+import _ from 'lodash';
+
+const $inject = ['$q', 'rest', 'exception', 'pathToRegexp', '$filter', 'logger'];
 const config = require('./component.resource.json');
 class CellularService {
   constructor(...injects) {
@@ -18,7 +20,7 @@ class CellularService {
   _transform(data) {
     switch(config.get.type) {
     case 'collection':
-      return this._.map(data, (item, index) => {
+      return _.map(data, (item, index) => {
         return {
           title: (config.get.titlePrefix || 'tab') + index,
           content: item,
@@ -33,7 +35,7 @@ class CellularService {
         fields: config.fields
       };
     default:
-      return this._.map(data, (item, index) => {
+      return _.map(data, (item, index) => {
         return {
           title: (config.get.titlePrefix || 'tab') + index,
           content: item,

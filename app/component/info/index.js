@@ -1,5 +1,5 @@
 import angular from 'angular';
-import sjCore from 'sanji-core-ui';
+import {sjCore} from 'sanji-core-ui';
 
 import './cellular-signal.tpl.html';
 import './cellular-signal.style.scss';
@@ -9,8 +9,9 @@ import './info.tpl.html';
 import CellularInfoContainerComponent from './container.component';
 import CellularInfoComponent from './info.component';
 
-let app = angular.module('sanji.cellular.info', [sjCore]);
-app.component('sanjiCellularInfoContainer', CellularInfoContainerComponent);
-app.component('sanjiCellularInfo', CellularInfoComponent);
-app.component('cellularSignal', CellularSignalComponent);
-export default app = app.name;
+const sjCellularInfo = angular.module('sanji.cellular.info', [sjCore])
+  .component('sanjiCellularInfoContainer', CellularInfoContainerComponent)
+  .component('sanjiCellularInfo', CellularInfoComponent)
+  .component('cellularSignal', CellularSignalComponent)
+  .name;
+export {sjCellularInfo};
