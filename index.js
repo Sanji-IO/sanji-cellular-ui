@@ -1,3 +1,3 @@
-import component from './app/component';
+import {sjCellular} from './app/component';
 
-export default component;
+export {sjCellular};
