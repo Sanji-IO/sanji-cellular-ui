@@ -5,6 +5,10 @@ const config = require('./component.resource.json');
 class CellularService {
   constructor(...injects) {
     CellularService.$inject.forEach((item, index) => this[item] = injects[index]);
+    this.restConfig = {
+      basePath: (__DEV__) ? __BASE_PATH__ : undefined
+    };
+
     switch(config.get.type) {
     case 'collection':
       this.data = [];
@@ -46,9 +50,13 @@ class CellularService {
     }
   }
 
+  setBasePath(path) {
+    this.restConfig.basePath = path;
+  }
+
   get() {
     let toPath = this.pathToRegexp.compile(config.get.url);
-    return this.rest.get(toPath(), (__DEV__) ? {basePath: __BASE_PATH__} : undefined)
+    return this.rest.get(toPath(), this.restConfig)
     .then(res => {
       this.data = this._transform(res.data);
     })
@@ -61,7 +69,7 @@ class CellularService {
   update(data) {
     let toPath = this.pathToRegexp.compile(config.put.url);
     let path = (undefined !== data.content.id) ? toPath({id: data.content.id}) : toPath();
-    return this.rest.put(path, data.content, data.formOptions.files, (__DEV__) ? {basePath: __BASE_PATH__} : undefined)
+    return this.rest.put(path, data.content, data.formOptions.files, this.restConfig)
     .then(res => {
       this.logger.success(this.$filter('translate')('CELLULAR_FORM_SAVE_SUCCESS'), res.data);
       return res.data;
