@@ -54,11 +54,15 @@ class CellularService {
     this.restConfig.basePath = path;
   }
 
+  set(data) {
+    this.data = data;
+  }
+
   get() {
     let toPath = this.pathToRegexp.compile(config.get.url);
     return this.rest.get(toPath(), this.restConfig)
     .then(res => {
-      this.data = this._transform(res.data);
+      this.set(this._transform(res.data));
     })
     .catch(err => {
       this.exception.catcher('[CellularService] Get data error.')(err);
