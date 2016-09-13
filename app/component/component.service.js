@@ -1,7 +1,7 @@
 import _ from 'lodash';
+import config from './component.resource.json';
 
 const $inject = ['$q', 'rest', 'exception', 'pathToRegexp', '$filter', 'logger'];
-const config = require('./component.resource.json');
 class CellularService {
   constructor(...injects) {
     CellularService.$inject.forEach((item, index) => this[item] = injects[index]);
