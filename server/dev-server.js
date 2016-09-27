@@ -4,7 +4,7 @@ const config = require('../webpack.dev');
 new WebpackDevServer(webpack(config), {
   historyApiFallback: true,
   stats: {
-    colors: true,
+    colors: true
   }
 })
 .listen(8080, 'localhost', function(err) {
