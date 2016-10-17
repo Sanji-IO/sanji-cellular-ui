@@ -13,17 +13,42 @@
       "key": "enable",
       "type": "switch",
       "templateOptions": {
-        "label": "CELLULAR_FORM_LABEL_ENABLE",
-        "required": true
+        "label": "CELLULAR_FORM_LABEL_ENABLE"
       }
     },
     {
-      "key": "apn",
+      "key": "pdpContext.static",
+      "type": "switch",
+      "templateOptions": {
+        "label": "CELLULAR_FORM_LABEL_PRIVATE_NETWORK"
+      }
+    },
+    {
+      "key": "pdpContext.primary.apn",
       "type": "input",
       "templateOptions": {
-        "label": "CELLULAR_FORM_LABEL_APN",
+        "label": "CELLULAR_FORM_LABEL_PRIMARY_APN",
         "required": true
-      }
+      },
+      "hideExpression": "!model.pdpContext.static"
+    },
+    {
+      "key": "pdpContext.secondary.apn",
+      "type": "input",
+      "templateOptions": {
+        "label": "CELLULAR_FORM_LABEL_SECONDARY_APN"
+      },
+      "hideExpression": "!model.pdpContext.static"
+    },
+    {
+      "key": "pdpContext.id",
+      "type": "number",
+      "templateOptions": {
+        "label": "CELLULAR_FORM_LABEL_PACKET_DATA_PROTOCOL",
+        "min": 1,
+        "max": 16
+      },
+      "hideExpression": "!!model.pdpContext.static"
     },
     {
       "key": "pinCode",
