@@ -15,6 +15,8 @@
   "CELLULAR_INFO_OPERATOR": "Operator Name",
   "CELLULAR_INFO_CONNECTION_STATUS": "Connection Status",
   "CELLULAR_INFO_APN": "APN",
+  "CELLULAR_INFO_PRIMARY_APN": "Primary APN",
+  "CELLULAR_INFO_SECONDARY_APN": "Secondary APN",
   "CELLULAR_INFO_MODE": "Mode",
   "CELLULAR_INFO_LAC": "LAC",
   "CELLULAR_INFO_IMEI": "IMEI",
@@ -32,5 +34,8 @@
   "CELLULAR_INFO_TARGET_HOST": "Target Host",
   "CELLULAR_INFO_PING_INTERVAL": "Ping Interval",
   "CELLULAR_SIGNAL_CHART_TITLE": "Profile Strength Meter",
-  "CELLULAR_INFO_NO_MODULE_MSG": "Please insert cellular module."
+  "CELLULAR_INFO_NO_MODULE_MSG": "Please insert cellular module.",
+  "CELLULAR_INFO_SIGNAL_RSSI": "RSSI",
+  "CELLULAR_INFO_SIGNAL_ECIO": "ECIO",
+  "CELLULAR_INFO_PHONE_NUMBER": "Phone Number"
 }
