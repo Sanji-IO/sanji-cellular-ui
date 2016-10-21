@@ -41,6 +41,16 @@
       "hideExpression": "!model.pdpContext.static"
     },
     {
+      "key": "pdpContext.retryTimeout",
+      "type": "number",
+      "templateOptions": {
+        "label": "CELLULAR_FORM_LABEL_RETRY_TIMEOUT",
+        "min": 60,
+        "max": 86400
+      },
+      "hideExpression": "!model.pdpContext.static"
+    },
+    {
       "key": "pdpContext.id",
       "type": "number",
       "templateOptions": {
