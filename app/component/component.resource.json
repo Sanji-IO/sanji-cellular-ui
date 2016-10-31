@@ -64,8 +64,7 @@
       "key": "pinCode",
       "type": "input",
       "templateOptions": {
-        "label": "CELLULAR_FORM_LABEL_PINCODE",
-        "required": true
+        "label": "CELLULAR_FORM_LABEL_PINCODE"
       }
     },
     {
