@@ -71,8 +71,7 @@
       "key": "keepalive.enable",
       "type": "switch",
       "templateOptions": {
-        "label": "CELLULAR_FORM_LABEL_ENABLE_KEEPALIVE",
-        "required": true
+        "label": "CELLULAR_FORM_LABEL_ENABLE_KEEPALIVE"
       }
     },
     {
