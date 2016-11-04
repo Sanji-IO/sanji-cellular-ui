@@ -13,6 +13,7 @@
   "CELLULAR_FORM_LABEL_TARGET_HOST": "Target Host",
   "CELLULAR_FORM_LABEL_PING_INTERVAL": "Ping Interval",
   "CELLULAR_FORM_LABEL_RETRY_TIMEOUT": "Retry Timeout(sec.)",
+  "CELLULAR_FORM_LABEL_REBOOT": "Reboot",
   "CELLULAR_FORM_SAVE": "Save",
   "CELLULAR_FORM_SAVE_SUCCESS": "Update data successfully.",
   "CELLULAR_INFO_BASIC": "Basic Information",

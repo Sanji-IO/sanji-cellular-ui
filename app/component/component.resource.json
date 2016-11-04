@@ -93,6 +93,14 @@
         "required": true
       },
       "hideExpression": "!model.keepalive.enable"
+    },
+    {
+      "key": "keepalive.reboot.enable",
+      "type": "switch",
+      "templateOptions": {
+        "label": "CELLULAR_FORM_LABEL_REBOOT"
+      },
+      "hideExpression": "!model.keepalive.enable"
     }
   ]
 }
