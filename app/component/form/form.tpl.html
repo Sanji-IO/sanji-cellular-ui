@@ -1,4 +1,4 @@
-<script type ="text/ng-template" id="sanji-cellular-form.tpl.html">
+<script type="text/ng-template" id="sanji-cellular-form.tpl.html">
   <div ng-if="0 === vm.tabs.length" layout="column" layout-align="center center">
     <div flex>
       <ng-md-icon icon="portable_wifi_off" size="100" style="width: 100px; height: 100px;"></ng-md-icon>
@@ -7,7 +7,7 @@
       <span translate="CELLULAR_INFO_NO_MODULE_MSG"></span>
     </md-subheader>
   </div>
-  <md-tabs ng-if="0 < vm.tabs.length" md-dynamic-height md-border-bottom>
+  <md-tabs ng-if="0 < vm.tabs.length" md-dynamic-height md-border-bottom mobx-autorun>
     <md-tab ng-repeat="tab in vm.tabs track by $index"
     label="{{::tab.content.name}}">
       <form ng-submit="vm.save(tab)"

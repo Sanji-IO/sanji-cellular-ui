@@ -3,16 +3,12 @@ const WINDOW_ID = 'sanji-cellular-ui';
 class CellularInfoContainerController {
   constructor(...injects) {
     CellularInfoContainerController.$inject.forEach((item, index) => this[item] = injects[index]);
-
-    this.sanjiWindowMgr = this.sanjiWindowService.get(WINDOW_ID);
-    this.data = this.cellularService.data;
-    this.$scope.$on('sj:window:refresh', this.onRefresh.bind(this));
   }
 
   $onInit() {
-    this.sanjiWindowMgr.promise = this.cellularService.get().then(() => {
-      this.data = this.cellularService.data;
-    });
+    this.sanjiWindowMgr = this.sanjiWindowService.get(WINDOW_ID);
+    this.$scope.$on('sj:window:refresh', this.onRefresh.bind(this));
+    this.sanjiWindowMgr.promise = this.cellularService.get().then(data => this.data = data);
   }
 
   onRefresh(event, args) {

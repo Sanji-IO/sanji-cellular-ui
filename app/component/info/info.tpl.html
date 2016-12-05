@@ -1,4 +1,4 @@
-<script type ="text/ng-template" id="sanji-cellular-info.tpl.html">
+<script type="text/ng-template" id="sanji-cellular-info.tpl.html">
   <div ng-if="0 === vm.tabs.length" layout="column" layout-align="center center">
     <div flex>
       <md-icon ng-md-icon icon="portable_wifi_off" size="100" style="width: 100px; height: 100px;"></md-icon>
@@ -7,7 +7,7 @@
       <span translate="CELLULAR_INFO_NO_MODULE_MSG"></span>
     </md-subheader>
   </div>
-  <md-tabs md-dynamic-height md-border-bottom ng-if="0 < vm.tabs.length">
+  <md-tabs md-dynamic-height md-border-bottom ng-if="0 < vm.tabs.length" mobx-autorun>
     <md-tab ng-repeat="tab in vm.tabs track by $index"
     label="{{::tab.content.name}}">
       <cellular-signal signal="tab.content.signal.rssi"></cellular-signal>
