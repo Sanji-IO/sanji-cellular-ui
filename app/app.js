@@ -8,7 +8,7 @@ import {sjCore} from 'sanji-core-ui';
 import {sjCellular} from './component';
 import { cellularReducer } from './component/component.state';
 
-const app = angular.module('webapp', [sjCellular, sjCore]);
+const app = angular.module('webapp', [sjCore, sjCellular]);
 class AppController {
   constructor($translate, LANG_KEYS, auth) {
     this.$translate = $translate;
@@ -26,7 +26,7 @@ class AppController {
   }
 }
 app.config(reduxHelperProvider => {
-  reduxHelperProvider.configure({cellularReducer});
+  reduxHelperProvider.configure({cellularReducer}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 });
 app.run(session => {
   session.create('token', 'test');

@@ -1,5 +1,4 @@
 import angular from 'angular';
-import {sjCore} from 'sanji-core-ui';
 import {sjCellularInfo} from './info';
 import {sjCellularForm} from './form';
 
@@ -9,7 +8,6 @@ import CellularService from './component.service';
 import CellularWindowComponent from './window.component';
 
 const sjCellular = angular.module('sanji.cellular', [
-  sjCore,
   sjCellularInfo,
   sjCellularForm
 ])
