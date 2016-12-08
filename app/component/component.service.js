@@ -1,12 +1,9 @@
 import _ from 'lodash';
-import { observable, action } from 'mobx';
 
 import config from './component.resource.json';
 
 const $inject = ['$q', 'rest', 'exception', 'pathToRegexp', '$filter', 'logger'];
 class CellularService {
-  @observable data = [];
-
   constructor(...injects) {
     CellularService.$inject.forEach((item, index) => this[item] = injects[index]);
     this.restConfig = {
@@ -40,19 +37,19 @@ class CellularService {
     }
   }
 
-  @action get() {
+  get() {
     const toPath = this.pathToRegexp.compile(config.get.url);
     return this.rest.get(toPath(), this.restConfig)
-    .then(res => this.data = this._transform(res.data))
+    .then(res => this._transform(res.data))
     .catch(err => {
       this.exception.catcher(this.$filter('translate')(this.message.get.error))(err);
       return this.$q.reject();
     });
   }
 
-  @action update(data) {
+  update(data) {
     const toPath = this.pathToRegexp.compile(config.put.url);
-    const path = (undefined !== data.content.id) ? toPath({id: data.content.id}) : toPath();
+    const path = toPath({id: data.content.id});
     return this.rest.put(path, data.content, data.formOptions.files, this.restConfig)
     .then(res => {
       this.logger.success(this.$filter('translate')(this.message.update.success), res.data);

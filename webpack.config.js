@@ -32,6 +32,7 @@ const config = {
   plugins: [
     new ProgressBarPlugin(),
     new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
       __TEST__: 'test' === NODE_ENV,
       __DEV__: 'development' === NODE_ENV,
       __RELEASE__: 'production' === NODE_ENV,

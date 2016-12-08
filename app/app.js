@@ -6,6 +6,7 @@ import './app.scss';
 import angular from 'angular';
 import {sjCore} from 'sanji-core-ui';
 import {sjCellular} from './component';
+import { cellularReducer } from './component/component.state';
 
 const app = angular.module('webapp', [sjCellular, sjCore]);
 class AppController {
@@ -24,6 +25,9 @@ class AppController {
     return this.auth.isAuthorized(event.roles);
   }
 }
+app.config(reduxHelperProvider => {
+  reduxHelperProvider.configure({cellularReducer});
+});
 app.run(session => {
   session.create('token', 'test');
   session.setUserData({

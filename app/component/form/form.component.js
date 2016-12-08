@@ -6,7 +6,6 @@ const CellularFormComponent = {
     submitCallback: '&onSubmit'
   },
   templateUrl: 'sanji-cellular-form.tpl.html',
-  controller: CellularFormController,
-  controllerAs: 'vm'
+  controller: CellularFormController
 };
 export default CellularFormComponent;

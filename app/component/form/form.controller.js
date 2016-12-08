@@ -5,7 +5,11 @@ class CellularFormController {
   }
 
   save(data) {
-    this.submitCallback({data: data});
+    this.submitCallback({
+      $event: {
+        data: data
+      }
+    });
   }
 }
 CellularFormController.$inject = $inject;
