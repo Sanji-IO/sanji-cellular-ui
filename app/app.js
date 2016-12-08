@@ -4,9 +4,8 @@ import 'angular-sanji-window.css';
 import 'toastr.css';
 import './app.scss';
 import angular from 'angular';
-import {sjCore} from 'sanji-core-ui';
-import {sjCellular} from './component';
-import { cellularReducer } from './component/component.state';
+import { sjCore } from 'sanji-core-ui';
+import { sjCellular, cellularReducer } from './component';
 
 const app = angular.module('webapp', [sjCore, sjCellular]);
 class AppController {

@@ -1,9 +1,9 @@
 import angular from 'angular';
-import {sjCellularInfo} from './info';
-import {sjCellularForm} from './form';
+import { sjCellularInfo } from './info';
+import { sjCellularForm } from './form';
 
 import i18nConfig from './component.i18n';
-import { CellularActions } from './component.state';
+import { CellularActions, cellularReducer } from './component.state';
 import CellularService from './component.service';
 import CellularWindowComponent from './window.component';
 
@@ -16,4 +16,4 @@ const sjCellular = angular.module('sanji.cellular', [
 .service('cellularService', CellularService)
 .component('sanjiCellularWindow', CellularWindowComponent)
 .name;
-export {sjCellular};
+export { sjCellular, cellularReducer };
