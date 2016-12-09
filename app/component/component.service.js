@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 import config from './component.resource.json';
 
 const $inject = ['$q', 'rest', 'exception', 'pathToRegexp', '$filter', 'logger'];
@@ -21,7 +19,7 @@ class CellularService {
   }
 
   _transform(data) {
-    return _.map(data, (item, index) => {
+    return data.map((item, index) => {
       return {
         title: (config.get.titlePrefix || 'tab') + index,
         content: item,
@@ -42,7 +40,7 @@ class CellularService {
     return this.rest.get(toPath(), this.restConfig)
     .then(res => this._transform(res.data))
     .catch(err => {
-      this.exception.catcher(this.$filter('translate')(this.message.get.error))(err);
+      this.exception.catcher(this.$filter('translate')(this.message.read.error))(err);
       return this.$q.reject();
     });
   }
