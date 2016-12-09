@@ -5,7 +5,7 @@ import 'toastr.css';
 import './app.scss';
 import angular from 'angular';
 import { sjCore } from 'sanji-core-ui';
-import { sjCellular, cellularReducer } from './component';
+import { sjCellular, cellulars } from './component';
 
 const app = angular.module('webapp', [sjCore, sjCellular]);
 class AppController {
@@ -25,7 +25,7 @@ class AppController {
   }
 }
 app.config(reduxHelperProvider => {
-  reduxHelperProvider.configure({cellularReducer}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+  reduxHelperProvider.configure({cellulars}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 });
 app.run(session => {
   session.create('token', 'test');

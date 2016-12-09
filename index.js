@@ -1,3 +1,3 @@
-import { sjCellular, cellularReducer } from './app/component';
+import { sjCellular, cellulars } from './app/component';
 
-export { sjCellular, cellularReducer };
+export { sjCellular, cellulars };

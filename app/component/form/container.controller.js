@@ -19,7 +19,7 @@ class CellularFormContainerController {
 
   mapStateToThis(state) {
     return {
-      data: state.cellularReducer
+      data: state.cellulars
     };
   }
 

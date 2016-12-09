@@ -13,8 +13,7 @@ export const CellularActions = ($q, cellularService) => {
 
   const getCellulars = options => {
     return (dispatch, getState) => {
-      const { cellularReducer } = getState();
-      const cellulars = cellularReducer;
+      const { cellulars } = getState();
 
       if((options && !options.force) && cellulars.length) {
         return $q.when(cellulars)
@@ -42,12 +41,24 @@ export const CellularActions = ($q, cellularService) => {
 //-------------------------------------------------------------------
 // Reducers
 //-------------------------------------------------------------------
-export const cellularReducer = (state = [], {type, payload}) => {
+export const cellulars = (state = [], {type, payload}) => {
   switch (type) {
     case GET_CELLULARS:
       return payload || state;
     case UPDATE_CELLULAR:
-      return state.map(cellular => cellular.content.id === payload.content.id ? payload : cellular);
+      return state.map(data => cellular(data, {type, payload}));
+    default:
+      return state;
+  }
+};
+
+export const cellular = (state, {type, payload}) => {
+  switch (type) {
+    case UPDATE_CELLULAR:
+      if (state.content.id !== payload.content.id) {
+        return state;
+      }
+      return Object.assign({}, state, payload);
     default:
       return state;
   }
