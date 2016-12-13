@@ -52,7 +52,7 @@ export const cellulars = (state = [], {type, payload}) => {
   }
 };
 
-export const cellular = (state, {type, payload}) => {
+const cellular = (state, {type, payload}) => {
   switch (type) {
     case UPDATE_CELLULAR:
       if (state.content.id !== payload.content.id) {
