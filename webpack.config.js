@@ -4,7 +4,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const NODE_ENV = process.env.NODE_ENV;
 const BASE_PATH = process.env.BASE_PATH;
 const nodeRoot = path.join(__dirname, 'node_modules');
-const appRoot = path.join(__dirname, 'app');
+const appRoot = path.join(__dirname, 'src');
 const config = {
   context: appRoot,
   output: {
@@ -26,7 +26,7 @@ const config = {
       { test: /\.js$/, loader: 'eslint-loader', exclude: /node_modules/, enforce: 'pre' },
       { test: /\.js$/, loader: 'babel-loader?cacheDirectory', exclude: /node_modules/ },
       { test: /\.json$/, loader: 'json-loader', exclude: /node_modules/ },
-      { test: /\.html$/, loader: 'ng-cache-loader?prefix=[dir]/[dir]', exclude: [/node_modules/, path.join(__dirname, '/app/index.html')] }
+      { test: /\.html$/, loader: 'ng-cache-loader?prefix=[dir]/[dir]', exclude: [/node_modules/, path.join(__dirname, '/src/index.html')] }
     ]
   },
   plugins: [

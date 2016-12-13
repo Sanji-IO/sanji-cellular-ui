@@ -6,14 +6,14 @@ class CellularFormContainerController {
   }
 
   $onInit() {
-    this.store = this.$ngRedux;
     this.sanjiWindowMgr = this.sanjiWindowService.get(WINDOW_ID);
-    this.$scope.$on('sj:window:refresh', this.onRefresh.bind(this));
-    this.unsubscribe = this.store.connect(this.mapStateToThis, this.cellularActions)(this);
+    this.unhandler = this.$scope.$on('sj:window:refresh', this.onRefresh.bind(this));
+    this.unsubscribe = this.$ngRedux.connect(this.mapStateToThis, this.cellularActions)(this);
     this.getCellulars();
   }
 
   $onDestroy() {
+    this.unhandler();
     this.unsubscribe();
   }
 
