@@ -3,8 +3,11 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const bourbon = require('node-bourbon').includePaths;
 const config = require('./webpack.config.js');
-console.log(bourbon);
-config.devtool = 'eval';
+
+config.devtool = 'cheap-module-eval-source-map';
+config.performance = {
+  hints: false
+};
 config.entry = {
   'sanji-ui': [
     'webpack/hot/dev-server',
