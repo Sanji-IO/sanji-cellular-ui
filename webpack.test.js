@@ -12,8 +12,24 @@ config.entry = {};
 config.output = {};
 
 config.module.rules = [
-  {test: /\.scss/, loader: 'style-loader!css-loader!postcss-loader!sass-loader?includePaths[]=' + bourbon},
-  {test: /\.css$/, loader: 'style-loader!css-loader!postcss-loader'},
+  {
+    test: /\.scss/,
+    use: ['style-loader', 'css-loader', 'postcss-loader', {
+      loader: 'sass-loader',
+      options: {
+        includePaths: bourbon
+      }
+    }]
+  },
+  {
+    test: /\.css$/,
+    use: ['style-loader', 'css-loader', {
+      loader: 'postcss-loader',
+      options: {
+        browsers: 'last 2 versions'
+      }
+    }]
+  },
   {test: /\.(png|jpg|gif|jpeg)$/, loader: 'url-loader?limit=8192'},
   {test: /\.(woff|woff2)$/, loader: 'url-loader?limit=10000&minetype=application/font-woff'},
   {test: /\.(ttf|eot|svg)$/, loader: 'file-loader'}

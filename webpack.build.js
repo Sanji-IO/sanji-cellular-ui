@@ -18,10 +18,10 @@ config.externals = [
 ];
 
 config.module.rules = [
-  {test: /\.js$/, loader: 'ng-annotate-loader', exclude: /(node_modules)/, enforce: 'post'},
+  {test: /\.js$/, use: 'ng-annotate-loader', exclude: /(node_modules)/, enforce: 'post'},
   {
     test: /\.scss$/,
-    loader: ExtractTextPlugin.extract({
+    use: ExtractTextPlugin.extract({
       notExtractLoader: 'style-loader',
       loader: 'css-loader!postcss-loader!sass-loader?includePaths[]=' + bourbon
     })
