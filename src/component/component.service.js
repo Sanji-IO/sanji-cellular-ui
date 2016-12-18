@@ -5,7 +5,7 @@ class CellularService {
   constructor(...injects) {
     CellularService.$inject.forEach((item, index) => this[item] = injects[index]);
     this.restConfig = {
-      basePath: (process.env.NODE_ENV === 'developement') ? __BASE_PATH__ : undefined
+      basePath: (process.env.NODE_ENV === 'development') ? __BASE_PATH__ : undefined
     };
     this.message = {
       read: {
