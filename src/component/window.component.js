@@ -10,7 +10,7 @@ const CellularWindowComponent = {
                 icon="info">
                 <sanji-cellular-info-container></sanji-cellular-info-container>
               </sanji-window-state>
-              <sanji-window-state ng-if="::$ctrl.isAuthorized(['superadmin', 'admin'])"
+              <sanji-window-state ng-if="::$ctrl.isAuthorized(['root', 'admin'])"
                 state-name="sanji-form"
                 link-name="{{'CELLULAR_FORM_SETTING' | translate}}"
                 icon="settings">
