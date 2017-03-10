@@ -1,7 +1,7 @@
 {
   "CELLULAR": "Cellular Settings",
   "CELLULAR_WINDOW_INFO": "Status",
-  "CELLULAR_SEC": "sec",
+  "CELLULAR_SEC": " sec",
   "CELLULAR_FORM_SETTING": "Settings",
   "CELLULAR_FORM_LABEL_ENABLE": "Enable",
   "CELLULAR_FORM_LABEL_PRIVATE_NETWORK": "Use Static APN",
