@@ -97,6 +97,7 @@
     {
       "key": "keepalive.reboot.enable",
       "type": "switch",
+      "className": "reboot-highlight",
       "templateOptions": {
         "label": "CELLULAR_FORM_LABEL_REBOOT"
       },
@@ -104,4 +105,3 @@
     }
   ]
 }
-
