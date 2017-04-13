@@ -51,9 +51,25 @@
           <p class="md-body-2" translate="CELLULAR_INFO_MODE"></p>
           <span ng-bind="tab.content.mode"></span>
         </md-list-item>
-        <md-list-item>
+        <md-list-item ng-if="tab.content.lac">
           <p class="md-body-2" translate="CELLULAR_INFO_LAC"></p>
           <span ng-bind="tab.content.lac"></span>
+        </md-list-item>
+        <md-list-item ng-if="tab.content.tac">
+          <p class="md-body-2">TAC</p>
+          <span ng-bind="tab.content.tac"></span>
+        </md-list-item>
+        <md-list-item ng-if="tab.content.nid">
+          <p class="md-body-2">NID</p>
+          <span ng-bind="tab.content.nid"></span>
+        </md-list-item>
+        <md-list-item ng-if="tab.content.cellId">
+          <p class="md-body-2">CELL ID</p>
+          <span ng-bind="tab.content.cellId"></span>
+        </md-list-item>
+        <md-list-item ng-if="tab.content.bid">
+          <p class="md-body-2">BID</p>
+          <span ng-bind="tab.content.bid"></span>
         </md-list-item>
         <md-list-item>
           <p class="md-body-2" translate="CELLULAR_INFO_IMEI"></p>

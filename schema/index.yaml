@@ -100,11 +100,10 @@ definitions:
         - ecio
         properties:
           csq:
-            type: string
+            type: integer
             description: |
-              Signal quality, The first part of the response is RSSI
-              (Received signal strength indicator). The second part of the
-              response is the Bit Error Rate (BER)
+              Signal quality, Only shows the first part of the response, RSSI
+              (Received signal strength indicator).
           rssi:
             type: integer
             description: |
@@ -121,9 +120,18 @@ definitions:
       lac:
         type: string
         description: Location area code.
+      tac:
+        type: string
+        description: Tracking area code (LTE).
+      nid:
+        type: string
+        description: Network ID (CDMA).
       cellId:
         type: string
         description: Cell ID.
+      bid:
+        type: string
+        description: Base station ID (CDMA).
       iccId:
           type: string
           description: ICC ID of SIM card.
@@ -296,13 +304,16 @@ externalDocs:
         "name": "wwan1",
         "mode": "umts",
         "signal": {
-          "csq": "14,99",
+          "csq": 14,
           "rssi": -76,
           "ecio": -8.5
         },
         "operatorName": "Chunghwa Telecom",
         "lac": "0xF339",
+        "tac": "0xF339",
+        "nid": "0xF339",
         "cellId": "0x3194",
+        "bid": "",
         "iccId": "",
         "phoneNumber": "",
         "imei": "356853050370859",
