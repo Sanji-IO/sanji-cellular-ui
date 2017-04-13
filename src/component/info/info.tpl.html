@@ -71,7 +71,11 @@
           <p class="md-body-2">BID</p>
           <span ng-bind="tab.content.bid"></span>
         </md-list-item>
-        <md-list-item>
+        <md-list-item ng-if="tab.content.imsi">
+          <p class="md-body-2">IMSI</p>
+          <span ng-bind="tab.content.imsi"></span>
+        </md-list-item>
+        <md-list-item ng-if="tab.content.imei">
           <p class="md-body-2" translate="CELLULAR_INFO_IMEI"></p>
           <span ng-bind="tab.content.imei"></span>
         </md-list-item>
