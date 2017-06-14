@@ -17,3 +17,4 @@ coverage
 *.tar
 *.tar.gz
 *.zip
+yarn.lock

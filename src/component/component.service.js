@@ -1,11 +1,11 @@
 import config from './component.resource.json';
 
-const $inject = ['$q', 'rest', 'exception', 'pathToRegexp', '$filter', 'logger'];
+const $inject = ['$q', 'rest', 'exception', 'pathToRegexp', '$filter', 'logger', '$http'];
 class CellularService {
   constructor(...injects) {
-    CellularService.$inject.forEach((item, index) => this[item] = injects[index]);
+    CellularService.$inject.forEach((item, index) => (this[item] = injects[index]));
     this.restConfig = {
-      basePath: (process.env.NODE_ENV === 'development') ? __BASE_PATH__ : undefined
+      basePath: process.env.NODE_ENV === 'development' ? __BASE_PATH__ : undefined
     };
     this.message = {
       read: {
@@ -37,9 +37,7 @@ class CellularService {
 
   get() {
     const toPath = this.pathToRegexp.compile(config.get.url);
-    return this.rest.get(toPath(), this.restConfig)
-    .then(res => this._transform(res.data))
-    .catch(err => {
+    return this.rest.get(toPath(), this.restConfig).then(res => this._transform(res.data)).catch(err => {
       this.exception.catcher(this.$filter('translate')(this.message.read.error))(err);
       return this.$q.reject();
     });
@@ -47,16 +45,38 @@ class CellularService {
 
   update(data) {
     const toPath = this.pathToRegexp.compile(config.put.url);
-    const path = toPath({id: data.content.id});
-    return this.rest.put(path, data.content, data.formOptions.files, this.restConfig)
-    .then(res => {
-      this.logger.success(this.$filter('translate')(this.message.update.success), res.data);
-      return res.data;
-    })
-    .catch(err => {
-      this.exception.catcher(this.$filter('translate')(this.message.update.error))(err);
+    const path = toPath({ id: data.content.id });
+    return this.rest
+      .put(path, data.content, data.formOptions.files, this.restConfig)
+      .then(res => {
+        this.logger.success(this.$filter('translate')(this.message.update.success), res.data);
+        return res.data;
+      })
+      .catch(err => {
+        this.exception.catcher(this.$filter('translate')(this.message.update.error))(err);
+        return this.$q.reject();
+      });
+  }
+
+  getCarrier() {
+    // return this.rest.get(`/network/cellulars/${id}/firmware`, this.restConfig).then(res => res.data).catch(err => {
+    return this.$http.get(`http://localhost:3000/firmware`, this.restConfig).then(res => res.data).catch(err => {
+      this.exception.catcher(this.$filter('translate')(this.message.read.error))(err);
       return this.$q.reject();
     });
+  }
+
+  setCarrier(id, data) {
+    return this.rest
+      .put(`/network/cellulars/${id}/firmware`, data, null, this.restConfig)
+      .then(res => {
+        this.logger.success(this.$filter('translate')(this.message.update.success), res.data);
+        return res.data;
+      })
+      .catch(err => {
+        this.exception.catcher(this.$filter('translate')(this.message.update.error))(err);
+        return this.$q.reject();
+      });
   }
 }
 CellularService.$inject = $inject;

@@ -1,10 +1,20 @@
 {
-  "presets": ["es2015"],
-  "plugins": ["lodash"],
+  "presets": [
+    "es2015"
+  ],
+  "plugins": [
+    "lodash",
+    "transform-object-rest-spread"
+  ],
   "env": {
     "test": {
       "plugins": [
-        ["__coverage__", {"ignore": "*.+(test|spec).*"}]
+        [
+          "__coverage__",
+          {
+            "ignore": "*.+(test|spec).*"
+          }
+        ]
       ]
     }
   }

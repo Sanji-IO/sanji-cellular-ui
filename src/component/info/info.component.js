@@ -2,10 +2,10 @@ import CellularInfoController from './info.controller';
 
 const CellularInfoComponent = {
   bindings: {
-    tabs: '<data'
+    tabs: '<data',
+    tabIndex: '='
   },
   templateUrl: 'sanji-cellular-info.tpl.html',
-  controller: CellularInfoController,
-  controllerAs: 'vm'
+  controller: CellularInfoController
 };
 export default CellularInfoComponent;

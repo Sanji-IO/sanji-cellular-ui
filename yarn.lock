@@ -35,15 +35,17 @@
     conventional-changelog "0.0.17"
     github-url-from-git "^1.4.0"
 
+"@uirouter/angularjs@~1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@uirouter/angularjs/-/angularjs-1.0.4.tgz#c89efe2d071573d92c2fd486e35a22effc8dc017"
+  dependencies:
+    "@uirouter/core" "5.0.3"
+
 "@uirouter/core@5.0.3":
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-5.0.3.tgz#e2b5b1e45190e20c67ba4e15c013de5d4e0ccab3"
 
-abbrev@1:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.0.tgz#d0554c2256636e2f56e7c2e5ad183f859428d81f"
-
-abbrev@1.0.x:
+abbrev@1, abbrev@1.0.x:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.0.9.tgz#91b4792588a7738c25f35dd6f63752a2f8776135"
 
@@ -186,6 +188,10 @@ angular-material-icons@^0.7.1, angular-material-icons@~0.7.1:
   dependencies:
     angular ">=1.3.0"
 
+angular-material-zippy@~1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/angular-material-zippy/-/angular-material-zippy-1.0.8.tgz#8145eef57579b7a7f4f8a46b3e0134a610451656"
+
 angular-material@~1.1.1, angular-material@~1.1.3:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/angular-material/-/angular-material-1.1.4.tgz#27de35646f54ccd320080af0c708e1b438af87f6"
@@ -246,12 +252,6 @@ angular-translate@~2.13.0, angular-translate@~2.13.1:
   resolved "https://registry.yarnpkg.com/angular-translate/-/angular-translate-2.13.1.tgz#05673eb371986fc11edc151f590299d7e0c46228"
   dependencies:
     angular ">=1.2.26 <=1.6"
-
-angular-ui-router@^1.0.0-beta.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/angular-ui-router/-/angular-ui-router-1.0.3.tgz#bf2494caae95c37cf01af3761d89747cfed2db45"
-  dependencies:
-    "@uirouter/core" "5.0.3"
 
 angular@*, "angular@>=1.2.26 <=1.6", angular@>=1.3.0, angular@^1.2.0, angular@~1.5.0:
   version "1.5.11"
@@ -482,7 +482,7 @@ babel-code-frame@^6.11.0, babel-code-frame@^6.16.0, babel-code-frame@^6.22.0:
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-babel-core@^6.24.0, babel-core@^6.24.1:
+babel-core@^6.24.1, babel-core@^6.25.0:
   version "6.25.0"
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.25.0.tgz#7dd42b0463c742e9d5296deb3ec67a9322dad729"
   dependencies:
@@ -689,6 +689,10 @@ babel-plugin-syntax-exponentiation-operator@^6.8.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-exponentiation-operator/-/babel-plugin-syntax-exponentiation-operator-6.13.0.tgz#9ee7e8337290da95288201a6a57f4170317830de"
 
+babel-plugin-syntax-object-rest-spread@^6.8.0:
+  version "6.13.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-object-rest-spread/-/babel-plugin-syntax-object-rest-spread-6.13.0.tgz#fd6536f2bce13836ffa3a5458c4903a597bb3bf5"
+
 babel-plugin-syntax-trailing-function-commas@^6.22.0:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-trailing-function-commas/-/babel-plugin-syntax-trailing-function-commas-6.22.0.tgz#ba0360937f8d06e40180a43fe0d5616fff532cf3"
@@ -877,6 +881,13 @@ babel-plugin-transform-exponentiation-operator@^6.22.0:
     babel-plugin-syntax-exponentiation-operator "^6.8.0"
     babel-runtime "^6.22.0"
 
+babel-plugin-transform-object-rest-spread@^6.23.0:
+  version "6.23.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-object-rest-spread/-/babel-plugin-transform-object-rest-spread-6.23.0.tgz#875d6bc9be761c58a2ae3feee5dc4895d8c7f921"
+  dependencies:
+    babel-plugin-syntax-object-rest-spread "^6.8.0"
+    babel-runtime "^6.22.0"
+
 babel-plugin-transform-regenerator@^6.22.0, babel-plugin-transform-regenerator@^6.24.1:
   version "6.24.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-regenerator/-/babel-plugin-transform-regenerator-6.24.1.tgz#b8da305ad43c3c99b4848e4fe4037b770d23c418"
@@ -898,7 +909,7 @@ babel-polyfill@^6.16.0:
     core-js "^2.4.0"
     regenerator-runtime "^0.10.0"
 
-babel-preset-env@^1.4.0:
+babel-preset-env@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-1.5.2.tgz#cd4ae90a6e94b709f97374b33e5f8b983556adef"
   dependencies:
@@ -2441,7 +2452,7 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-kentcdodds@^12.2.0:
+eslint-config-kentcdodds@^12.4.1:
   version "12.4.1"
   resolved "https://registry.yarnpkg.com/eslint-config-kentcdodds/-/eslint-config-kentcdodds-12.4.1.tgz#15c9e96da447f6a7c71a11976a6c06ae10e9a151"
   dependencies:
@@ -4506,11 +4517,7 @@ lower-case@^1.1.1:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/lower-case/-/lower-case-1.1.4.tgz#9a2cabd1b9e8e0ae993a4bf7d5875c39c42e8eac"
 
-lru-cache@2:
-  version "2.7.3"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-2.7.3.tgz#6d4524e8b955f95d4f5b58851ce21dd72fb4e952"
-
-lru-cache@2.2.x:
+lru-cache@2, lru-cache@2.2.x:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-2.2.4.tgz#6c658619becf14031d0d0b594b16042ce4dc063d"
 
@@ -4933,13 +4940,7 @@ node-uuid@~1.4.0, node-uuid@~1.4.7:
   version "1.4.8"
   resolved "https://registry.yarnpkg.com/node-uuid/-/node-uuid-1.4.8.tgz#b040eb0923968afabf8d32fb1f17f1167fdab907"
 
-"nopt@2 || 3", nopt@3.x, nopt@~3.0.1:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/nopt/-/nopt-3.0.6.tgz#c6465dbf08abcd4db359317f79ac68a646b28ff9"
-  dependencies:
-    abbrev "1"
-
-nopt@3.0.4:
+"nopt@2 || 3", nopt@3.0.4, nopt@3.x, nopt@~3.0.1:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/nopt/-/nopt-3.0.4.tgz#dd63bc9c72a6e4e85b85cdc0ca314598facede5e"
   dependencies:
@@ -5713,7 +5714,7 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prettier@^1.3.1:
+prettier@^1.4.4:
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.4.4.tgz#a8d1447b14c9bf67e6d420dcadd10fb9a4fad65a"
 
@@ -6335,18 +6336,19 @@ sanji-auth-ui@^1.2.8:
     angular-storage "~0.0.15"
     sanji-rest-ui "^1.4.1"
 
-sanji-common-devs-ui@~5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/sanji-common-devs-ui/-/sanji-common-devs-ui-5.2.0.tgz#9f7807a6d1729304107a3161015e9a9dd2f0f857"
+sanji-common-devs-ui@~5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/sanji-common-devs-ui/-/sanji-common-devs-ui-5.3.0.tgz#d9974257dbe6dceae9c95c045665149bc1830b66"
   dependencies:
     autoprefixer "^6.7.7"
-    babel-core "^6.24.0"
+    babel-core "^6.25.0"
     babel-eslint "^7.2.0"
     babel-loader "^7.0.0"
     babel-plugin-__coverage__ "^11.0.0"
     babel-plugin-angularjs-annotate "^0.7.0"
     babel-plugin-lodash "^3.2.11"
-    babel-preset-env "^1.4.0"
+    babel-plugin-transform-object-rest-spread "^6.23.0"
+    babel-preset-env "^1.5.2"
     babel-preset-es2015 "^6.24.0"
     chai "^3.5.0"
     commitizen "^2.9.6"
@@ -6355,7 +6357,7 @@ sanji-common-devs-ui@~5.2.0:
     cucumber "~0.7.0"
     cz-conventional-changelog "^2.0.0"
     eslint "^3.19.0"
-    eslint-config-kentcdodds "^12.2.0"
+    eslint-config-kentcdodds "^12.4.1"
     eslint-config-prettier "^2.1.0"
     eslint-loader "^1.7.1"
     eslint-plugin-prettier "^2.1.0"
@@ -6381,21 +6383,21 @@ sanji-common-devs-ui@~5.2.0:
     node-sass "^4.5.0"
     opt-cli "^1.5.1"
     postcss-loader "^1.3.3"
-    prettier "^1.3.1"
+    prettier "^1.4.4"
     progress-bar-webpack-plugin "^1.9.3"
     protractor "~2.5.1"
     raw-loader "^0.5.1"
     rimraf "^2.6.1"
     sass-loader "^6.0.3"
-    style-loader "^0.16.1"
+    style-loader "^0.18.2"
     url-loader "^0.5.8"
     validate-commit-msg "^2.12.1"
-    webpack "^2.5.1"
+    webpack "^2.6.1"
     webpack-dev-server "^2.4.5"
 
-sanji-core-ui@^3.1.15:
-  version "3.1.15"
-  resolved "https://registry.yarnpkg.com/sanji-core-ui/-/sanji-core-ui-3.1.15.tgz#8e5657acd701f02d7803347263e93cea4dcd9357"
+sanji-core-ui@^3.1.17:
+  version "3.1.17"
+  resolved "https://registry.yarnpkg.com/sanji-core-ui/-/sanji-core-ui-3.1.17.tgz#83ef139f14014b9d6bc8d603b0f1cff29fd5e4a1"
   dependencies:
     angular "~1.5.0"
     angular-animate "~1.5.0"
@@ -6408,6 +6410,7 @@ sanji-core-ui@^3.1.15:
     angular-material "~1.1.1"
     angular-material-data-table "~0.10.10"
     angular-material-icons "~0.7.1"
+    angular-material-zippy "~1.0.8"
     angular-messages "~1.5.0"
     angular-moment "~1.0.1"
     angular-sanitize "~1.5.0"
@@ -6427,7 +6430,7 @@ sanji-core-ui@^3.1.15:
     offline-js "~0.7.18"
     path-to-regexp "~1.7.0"
     sanji-redux-ui "~1.1.2"
-    sanji-utils-ui "^2.0.1"
+    sanji-utils-ui "^2.0.2"
     webfontloader "~1.6.27"
 
 sanji-exception-ui@^1.2.9:
@@ -6472,12 +6475,12 @@ sanji-rest-ui@^1.4.0, sanji-rest-ui@^1.4.1:
     angular "~1.5.0"
     ng-file-upload "~12.2.0"
 
-sanji-router-ui@^1.2.9:
-  version "1.2.9"
-  resolved "https://registry.yarnpkg.com/sanji-router-ui/-/sanji-router-ui-1.2.9.tgz#12484939ee6999ff27a36415d799f8dad5a1458d"
+sanji-router-ui@^1.2.10:
+  version "1.2.10"
+  resolved "https://registry.yarnpkg.com/sanji-router-ui/-/sanji-router-ui-1.2.10.tgz#3f2c58fb0fb493cac9604be500cbae8ab86d756f"
   dependencies:
+    "@uirouter/angularjs" "~1.0.4"
     angular "~1.5.0"
-    angular-ui-router "^1.0.0-beta.3"
     sanji-logger-ui "~1.2.9"
 
 sanji-socket-ui@^3.0.1:
@@ -6488,15 +6491,15 @@ sanji-socket-ui@^3.0.1:
     angular-socket-io "~0.7.0"
     socket.io-client "github:socketio/socket.io-client"
 
-sanji-utils-ui@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/sanji-utils-ui/-/sanji-utils-ui-2.0.1.tgz#9a1e04232f7bbf8d6af1b76639e0a89beea37fe6"
+sanji-utils-ui@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/sanji-utils-ui/-/sanji-utils-ui-2.0.2.tgz#a361724379de57ca9d7a447b28bac35cbac821ce"
   dependencies:
     sanji-auth-ui "^1.2.8"
     sanji-exception-ui "^1.2.9"
     sanji-logger-ui "^1.2.9"
     sanji-rest-ui "^1.4.0"
-    sanji-router-ui "^1.2.9"
+    sanji-router-ui "^1.2.10"
     sanji-socket-ui "^3.0.1"
 
 sass-graph@^2.1.1:
@@ -6678,17 +6681,9 @@ shebang-regex@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-1.0.0.tgz#da42f49740c0b42db2ca9728571cb190c98efea3"
 
-shelljs@0.7.6:
+shelljs@0.7.6, shelljs@^0.7.5:
   version "0.7.6"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.6.tgz#379cccfb56b91c8601e4793356eb5382924de9ad"
-  dependencies:
-    glob "^7.0.0"
-    interpret "^1.0.0"
-    rechoir "^0.6.2"
-
-shelljs@^0.7.5:
-  version "0.7.8"
-  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.8.tgz#decbcf874b0d1e5fb72e14b164a9683048e9acb3"
   dependencies:
     glob "^7.0.0"
     interpret "^1.0.0"
@@ -6761,8 +6756,8 @@ socket.io-client@1.7.3:
     to-array "0.1.4"
 
 "socket.io-client@github:socketio/socket.io-client":
-  version "2.0.2"
-  resolved "https://codeload.github.com/socketio/socket.io-client/tar.gz/83fedf598a2104f965ec68b4f2a79091892fd477"
+  version "2.0.3"
+  resolved "https://codeload.github.com/socketio/socket.io-client/tar.gz/19f2b1990079f7bc206186490fffd8fda1a01e8c"
   dependencies:
     backo2 "1.0.2"
     base64-arraybuffer "0.1.5"
@@ -7064,11 +7059,12 @@ strip-json-comments@2.0.1, strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-style-loader@^0.16.1:
-  version "0.16.1"
-  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.16.1.tgz#50e325258d4e78421dd9680636b41e8661595d10"
+style-loader@^0.18.2:
+  version "0.18.2"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.18.2.tgz#cc31459afbcd6d80b7220ee54b291a9fd66ff5eb"
   dependencies:
     loader-utils "^1.0.2"
+    schema-utils "^0.3.0"
 
 superagent@^3.5.2:
   version "3.5.2"
@@ -7633,7 +7629,7 @@ webpack-sources@^1.0.1:
     source-list-map "^2.0.0"
     source-map "~0.5.3"
 
-webpack@^2.5.1, webpack@^2.6.1:
+webpack@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-2.6.1.tgz#2e0457f0abb1ac5df3ab106c69c672f236785f07"
   dependencies:

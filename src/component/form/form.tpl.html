@@ -7,7 +7,7 @@
       <span translate="CELLULAR_INFO_NO_MODULE_MSG"></span>
     </md-subheader>
   </div>
-  <md-tabs ng-if="0 < $ctrl.tabs.length" md-dynamic-height md-border-bottom mobx-autorun>
+  <md-tabs ng-if="0 < $ctrl.tabs.length" md-dynamic-height md-border-bottom md-selected="$ctrl.tabIndex">
     <md-tab ng-repeat="tab in $ctrl.tabs track by $index"
     label="{{::tab.content.name}}">
       <form ng-submit="$ctrl.save(tab)"
@@ -22,6 +22,25 @@
               </md-button>
             </div>
           </formly-form>
+          <md-zippy ng-if="$ctrl.carrier.switchable" title="{{'CELLULAR_FORM_SWITCH_CARRIER' | translate}}">
+            <div layout="column" layout-padding novalidate>
+              <md-input-container class="md-block">
+                <label translate="CELLULAR_FORM_CARRIER"></label>
+                <md-select ng-model="$ctrl.currentCarrier" aria-label="select carrier">
+                  <md-option ng-repeat="item in $ctrl.carrier.available track by $index"
+                    ng-value="item">
+                    <span>{{item.carrier}}</span>
+                  </md-option>
+                </md-select>
+              </md-input-container>
+              <div layout layout-align="end center">
+                <md-button type="button" class="md-raised md-primary"
+                aria-label="set carrier" ng-click="$ctrl.setCarrier($ctrl.currentCarrier)">
+                  <sapn translate="CELLULAR_FORM_APPLY"></span>
+                </md-button>
+              </div>
+            </div>
+          </md-zippy>
       </form>
     </md-tab>
   </md-tabs>

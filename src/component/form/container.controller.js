@@ -2,7 +2,7 @@ const $inject = ['$scope', '$ngRedux', 'sanjiWindowService', 'cellularActions'];
 const WINDOW_ID = 'sanji-cellular-ui';
 class CellularFormContainerController {
   constructor(...injects) {
-    CellularFormContainerController.$inject.forEach((item, index) => this[item] = injects[index]);
+    CellularFormContainerController.$inject.forEach((item, index) => (this[item] = injects[index]));
   }
 
   $onInit() {
@@ -19,13 +19,22 @@ class CellularFormContainerController {
 
   mapStateToThis(state) {
     return {
-      data: state.cellulars
+      data: state.cellulars,
+      carrier: state.carrier
     };
+  }
+
+  onFetchCarrier(event) {
+    return this.getCellularCarrier(event.id);
+  }
+
+  onSetCarrier(event) {
+    this.updateCellularCarrier(event.id, event.carrier);
   }
 
   onRefresh(event, args) {
     if (args.id === WINDOW_ID) {
-      this.sanjiWindowMgr.promise = this.getCellulars({force: true});
+      this.sanjiWindowMgr.promise = this.getCellulars({ force: true });
     }
   }
 

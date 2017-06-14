@@ -349,7 +349,7 @@ definitions:
 
   CellularFirmwareInfo:
     title: CellularFirmwareInfo
-    description: Display current, preferred, avaliable firmware properties, if current firmware is not  equal to preferred firmware, you should check your configuration. (fwver, config, carrier mismatch?).
+    description: Display current, preferred, available firmware properties, if current firmware is not  equal to preferred firmware, you should check your configuration. (fwver, config, carrier mismatch?).
     properties:
       switchable:
         type: boolean
@@ -359,7 +359,7 @@ definitions:
         $ref: '#/definitions/CellularFirmwareEntry'
       preferred:
         $ref: '#/definitions/CellularFirmwareEntry'
-      avaliable:
+      available:
         type: array
         items:
           $ref: '#/definitions/CellularFirmwareEntry'
@@ -379,17 +379,17 @@ definitions:
         type: string
         description: Firmware version
         minLength: 0
-        maxLength: 16
+        maxLength: 32
       config:
         type: string
         description: Config name
         minLength: 0
-        maxLength: 16
+        maxLength: 32
       carrier:
         type: string
         description: Carrier name
         minLength: 0
-        maxLength: 16
+        maxLength: 32
     example:
       $ref : '#/externalDocs/x-mocks/CellularFirmwareEntryExample'
 
@@ -459,25 +459,27 @@ externalDocs:
           }
         }
       }
+
     Cellulars:
       [
         $ref: '#/externalDocs/x-mocks/Cellular'
       ]
 
     CellularFirmwareInfoExample:
+
       {
         "switchable": true,
         "current": {
-            "fwver": "05.05.58.01",
-            "config": "ATT_005.029_001",
-            "carrier": "ATT"
+          "fwver": "05.05.58.01",
+          "config": "ATT_005.029_001",
+          "carrier": "ATT"
         },
         "preferred": {
-            "fwver": "05.05.58.01",
-            "config": "ATT_005.029_001",
-            "carrier": "ATT"
+          "fwver": "05.05.58.01",
+          "config": "ATT_005.029_001",
+          "carrier": "ATT"
         },
-        "avaliable": [
+        "available": [
           {
             "fwver": "05.05.58.01",
             "config": "ATT_005.029_001",
@@ -492,6 +494,7 @@ externalDocs:
       }
 
     CellularFirmwareEntryExample:
+
       {
         "fwver": "05.05.58.01",
         "config": "ATT_005.029_001",

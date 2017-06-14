@@ -3,7 +3,11 @@ import CellularFormController from './form.controller';
 const CellularFormComponent = {
   bindings: {
     tabs: '<data',
-    submitCallback: '&onSubmit'
+    carrier: '<',
+    tabIndex: '=',
+    submitCallback: '&onSubmit',
+    onFetchCarrier: '&',
+    onSetCarrier: '&'
   },
   templateUrl: 'sanji-cellular-form.tpl.html',
   controller: CellularFormController
