@@ -11,10 +11,10 @@ branches:
   only:
     - master
 before_install:
-  - npm i -g npm@^3.0.0
-before_script:
-  - npm prune
+  - npm i -g yarn-bin-fix
+after_install:
+  - yarn-bin-fix
 script:
-  - npm run build
+  - yarn build
 after_success:
-  - npm run semantic-release
+  - yarn run semantic-release
