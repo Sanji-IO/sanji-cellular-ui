@@ -12,9 +12,7 @@ branches:
     - master
 before_install:
   - npm i -g yarn-bin-fix
-after_install:
-  - yarn-bin-fix
 script:
-  - yarn build
+  - yarn-bin-fix && yarn build
 after_success:
   - yarn run semantic-release
