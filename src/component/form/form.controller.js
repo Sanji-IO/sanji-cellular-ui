@@ -1,15 +1,18 @@
-const $inject = [];
+const $inject = ['$timeout'];
 class CellularFormController {
   constructor(...injects) {
     CellularFormController.$inject.forEach((item, index) => (this[item] = injects[index]));
   }
 
   $onInit() {
+    this.currentCarrier = {};
     this.onFetchCarrier({
       $event: {
         id: this.tabIndex + 1
       }
-    }).then(carrier => (this.currentCarrier = carrier.preferred));
+    }).then(carrier => {
+      this.currentCarrier = carrier.preferred;
+    });
   }
 
   save(data) {

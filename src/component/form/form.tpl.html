@@ -28,7 +28,7 @@
                 <label translate="CELLULAR_FORM_CARRIER"></label>
                 <md-select ng-model="$ctrl.currentCarrier" aria-label="select carrier">
                   <md-option ng-repeat="item in $ctrl.carrier.available track by $index"
-                    ng-value="item">
+                    ng-value="item" ng-selected="$ctrl.currentCarrier.carrier === item.carrier">
                     <span>{{item.carrier}}</span>
                   </md-option>
                 </md-select>
