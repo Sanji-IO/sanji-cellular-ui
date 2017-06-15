@@ -12,13 +12,9 @@ config.entry = {
 config.output.filename = 'sanji-cellular-ui.js';
 config.output.libraryTarget = 'umd';
 config.output.library = 'sjCellular';
-config.externals = [
-  'angular',
-  'sanji-core-ui'
-];
+config.externals = ['angular', 'sanji-core-ui'];
 
 config.module.rules = [
-  {test: /\.js$/, use: 'ng-annotate-loader', exclude: /(node_modules)/, enforce: 'post'},
   {
     test: /\.scss$/,
     loader: ExtractTextPlugin.extract({
@@ -30,15 +26,13 @@ config.module.rules = [
 
 config.plugins.push(
   new ExtractTextPlugin('sanji-cellular-ui.css'),
-  new LodashModuleReplacementPlugin,
+  new LodashModuleReplacementPlugin(),
   new webpack.LoaderOptionsPlugin({
     minimize: true,
     debug: false,
     quiet: true,
-    options:{
-      postcss: [
-        autoprefixer({ browsers: ['last 2 versions'] })
-      ]
+    options: {
+      postcss: [autoprefixer({ browsers: ['last 2 versions'] })]
     }
   }),
   new webpack.optimize.UglifyJsPlugin({
