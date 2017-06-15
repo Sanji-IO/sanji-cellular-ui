@@ -10,9 +10,5 @@ node_js:
 branches:
   only:
     - master
-before_install:
-  - npm i -g yarn-bin-fix
-script:
-  - yarn-bin-fix && yarn build
 after_success:
-  - yarn run semantic-release
+  - npm run semantic-release
