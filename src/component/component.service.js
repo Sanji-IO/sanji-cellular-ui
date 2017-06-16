@@ -58,9 +58,8 @@ class CellularService {
       });
   }
 
-  getCarrier() {
-    // return this.rest.get(`/network/cellulars/${id}/firmware`, this.restConfig).then(res => res.data).catch(err => {
-    return this.$http.get(`http://localhost:3000/firmware`, this.restConfig).then(res => res.data).catch(err => {
+  getCarrier(id) {
+    return this.rest.get(`/network/cellulars/${id}/firmware`, this.restConfig).then(res => res.data).catch(err => {
       this.exception.catcher(this.$filter('translate')(this.message.read.error))(err);
       return this.$q.reject();
     });
