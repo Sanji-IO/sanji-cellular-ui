@@ -17,7 +17,7 @@
   "CELLULAR_FORM_SAVE": "Save",
   "CELLULAR_FORM_SAVE_SUCCESS": "Cellular data has been updated",
   "CELLULAR_INFO_BASIC": "Basic Information",
-  "CELLULAR_INFO_OPERATOR": "Carrier name",
+  "CELLULAR_INFO_OPERATOR": "Operator name",
   "CELLULAR_INFO_CONNECTION_STATUS": "Connection status",
   "CELLULAR_INFO_APN": "APN",
   "CELLULAR_INFO_PACKET_DATA_PROTOCOL": "PDP CID",
@@ -46,5 +46,6 @@
   "CELLULAR_INFO_PHONE_NUMBER": "Phone number",
   "CELLULAR_FORM_SWITCH_CARRIER": "Switch Carrier",
   "CELLULAR_FORM_CARRIER": "Carrier",
-  "CELLULAR_FORM_APPLY": "Apply"
+  "CELLULAR_FORM_APPLY": "Apply",
+  "CELLULAR_FORM_SWITCH_CARRIER_MSG": "This operation will take several minutes and cellular module may not be available during operation, please ensure stable power supply."
 }

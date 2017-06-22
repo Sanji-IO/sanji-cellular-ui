@@ -24,6 +24,7 @@
           </formly-form>
           <md-zippy ng-if="$ctrl.carrier.switchable" title="{{'CELLULAR_FORM_SWITCH_CARRIER' | translate}}">
             <div layout="column" layout-padding novalidate>
+              <p translate="CELLULAR_FORM_SWITCH_CARRIER_MSG"></p>
               <md-input-container class="md-block">
                 <label translate="CELLULAR_FORM_CARRIER"></label>
                 <md-select ng-model="$ctrl.currentCarrier" aria-label="select carrier">
