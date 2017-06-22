@@ -132,6 +132,10 @@
           <span ng-bind="tab.content.keepalive.intervalSec"></span>
           <span translate="CELLULAR_SEC"></span>
         </md-list-item>
+        <md-list-item ng-if="$ctrl.carrier.switchable">
+          <p class="md-body-2" translate="CELLULAR_FORM_CARRIER"></p>
+          <span ng-bind="$ctrl.currentCarrier.carrier"></span>
+        </md-list-item>
       </md-list>
     </md-tab>
   </md-tabs>
