@@ -45,5 +45,6 @@
   "CELLULAR_FORM_SWITCH_CARRIER": "切換電信商",
   "CELLULAR_FORM_CARRIER": "電信商",
   "CELLULAR_FORM_APPLY": "套用",
-  "CELLULAR_FORM_SWITCH_CARRIER_MSG": "這個動作需要數分鐘，過程中模組可能無法被正常存取，請保持電源的穩定供應."
+  "CELLULAR_FORM_SWITCH_CARRIER_MSG": "這個動作需要數分鐘，過程中模組可能無法被正常存取，請保持電源的穩定供應.",
+  "CELLULAR_FORM_CURRENT_CARRIER": "目前的電信商"
 }

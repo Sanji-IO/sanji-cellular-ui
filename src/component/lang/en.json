@@ -47,5 +47,6 @@
   "CELLULAR_FORM_SWITCH_CARRIER": "Switch Carrier",
   "CELLULAR_FORM_CARRIER": "Carrier",
   "CELLULAR_FORM_APPLY": "Apply",
-  "CELLULAR_FORM_SWITCH_CARRIER_MSG": "This operation will take several minutes and cellular module may not be available during operation, please ensure stable power supply."
+  "CELLULAR_FORM_SWITCH_CARRIER_MSG": "This operation will take several minutes and cellular module may not be available during operation, please ensure stable power supply.",
+  "CELLULAR_FORM_CURRENT_CARRIER": "Current Carrier"
 }

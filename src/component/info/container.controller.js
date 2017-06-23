@@ -24,10 +24,6 @@ class CellularInfoContainerController {
     };
   }
 
-  onFetchCarrier(event) {
-    return this.getCellularCarrier(event.id);
-  }
-
   onRefresh(event, args) {
     if (args.id === WINDOW_ID) {
       this.sanjiWindowMgr.promise = this.getCellulars({ force: true });
