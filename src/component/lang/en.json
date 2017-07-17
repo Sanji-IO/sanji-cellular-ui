@@ -13,7 +13,7 @@
   "CELLULAR_FORM_LABEL_TARGET_HOST": "Target host",
   "CELLULAR_FORM_LABEL_PING_INTERVAL": "Ping interval",
   "CELLULAR_FORM_LABEL_RETRY_TIMEOUT": "Connection retry timeout (sec)",
-  "CELLULAR_FORM_LABEL_REBOOT": "Reboot system after internet disconnection for 20 min",
+  "CELLULAR_FORM_LABEL_REBOOT": "Reboot system after disconnected from Internet for 20 min",
   "CELLULAR_FORM_SAVE": "Save",
   "CELLULAR_FORM_SAVE_SUCCESS": "Cellular data has been updated",
   "CELLULAR_INFO_BASIC": "Basic Information",

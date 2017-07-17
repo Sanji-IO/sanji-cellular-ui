@@ -6562,7 +6562,7 @@ selenium-webdriver@2.47.0:
     ws "^0.8.0"
     xml2js "0.4.4"
 
-semantic-release@^6.3.2:
+semantic-release@^6.3.6:
   version "6.3.6"
   resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-6.3.6.tgz#629d0aec90b38a2957a57a4a9ee1214af51928c7"
   dependencies:
