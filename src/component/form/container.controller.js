@@ -18,6 +18,7 @@ class CellularFormContainerController {
   }
 
   mapStateToThis(state) {
+    console.log(state.cellulars);
     return {
       data: state.cellulars,
       carrier: state.carrier

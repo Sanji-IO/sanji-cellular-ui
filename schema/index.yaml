@@ -256,31 +256,13 @@ definitions:
           primary:
             type: object
             description: Primary PDP context.
-            properties:
-              apn:
-                type: string
-                description: Edit APN of the specified PDP context.
-              type:
-                type: string
-                description: Indicate the PDP type to use.
-                enum:
-                - ipv4
-                - ipv6
-                - ipv4v6
+            items:
+              $ref: '#/definitions/CellularProfileEntry'
           secondary:
             type: object
             description: Secondary PDP context.
-            properties:
-              apn:
-                type: string
-                description: Edit APN of the specified PDP context.
-              type:
-                type: string
-                description: Indicate the PDP type to use.
-                enum:
-                - ipv4
-                - ipv6
-                - ipv4v6
+            items:
+              $ref: '#/definitions/CellularProfileEntry'
           list:
             readOnly: true
             type: array
@@ -347,6 +329,47 @@ definitions:
     example:
           $ref: '#/externalDocs/x-mocks/Cellular'
 
+  CellularProfileEntry:
+    title: CellularProfileEntry
+    description: A profile for connection
+    required:
+    - apn
+    properties:
+      apn:
+        type: string
+        description: Edit APN of the specified PDP context.
+      type:
+        type: string
+        description: Indicate the PDP type to use.
+        enum:
+        - ipv4
+        - ipv6
+        - ipv4v6
+      auth:
+        type: object
+        description: The negotiated authentication.
+        required:
+        - protocol
+        properties:
+          protocol:
+            type: string
+            description: The negotiated authentication protocol.
+            enum:
+            - none
+            - chap
+            - pap
+            - both
+          username:
+            type: string
+            description: Username for PAP and/or CHAP.
+            minLength: 0
+            maxLength: 255
+          password:
+            type: string
+            description: Password for PAP and/or CHAP.
+            minLength: 0
+            maxLength: 255
+
   CellularFirmwareInfo:
     title: CellularFirmwareInfo
     description: Display current, preferred, available firmware properties, if current firmware is not  equal to preferred firmware, you should check your configuration. (fwver, config, carrier mismatch?).
@@ -364,7 +387,7 @@ definitions:
         items:
           $ref: '#/definitions/CellularFirmwareEntry'
     example:
-      $ref : '#/externalDocs/x-mocks/CellularFirmwareInfoExample'
+      $ref: '#/externalDocs/x-mocks/CellularFirmwareInfoExample'
 
   CellularFirmwareEntry:
     title: CellularFirmwareEntry
@@ -435,10 +458,20 @@ externalDocs:
           "primary": {
             "apn": "internet",
             "type": "ipv4v6",
+            "auth": {
+              "protocol": "none",
+              "username": "",
+              "password": "",
+            }
           },
           "secondary": {
             "apn": "internet",
             "type": "ipv4v6",
+            "auth": {
+              "protocol": "none",
+              "username": "",
+              "password": "",
+            }
           },
           "list": [
             {
@@ -459,25 +492,23 @@ externalDocs:
           }
         }
       }
-
     Cellulars:
       [
         $ref: '#/externalDocs/x-mocks/Cellular'
       ]
 
     CellularFirmwareInfoExample:
-
       {
         "switchable": true,
         "current": {
-          "fwver": "05.05.58.01",
-          "config": "ATT_005.029_001",
-          "carrier": "ATT"
+            "fwver": "05.05.58.01",
+            "config": "ATT_005.029_001",
+            "carrier": "ATT"
         },
         "preferred": {
-          "fwver": "05.05.58.01",
-          "config": "ATT_005.029_001",
-          "carrier": "ATT"
+            "fwver": "05.05.58.01",
+            "config": "ATT_005.029_001",
+            "carrier": "ATT"
         },
         "available": [
           {
@@ -494,7 +525,6 @@ externalDocs:
       }
 
     CellularFirmwareEntryExample:
-
       {
         "fwver": "05.05.58.01",
         "config": "ATT_005.029_001",

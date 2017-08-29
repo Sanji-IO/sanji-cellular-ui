@@ -24,6 +24,51 @@
       }
     },
     {
+      "key": "protocol",
+      "model": "model.pdpContext.primary.auth",
+      "type": "select",
+      "templateOptions": {
+        "label": "CELLULAR_FORM_PRIMARY_AUTH_TYPE",
+        "required": true,
+        "options": [
+          {
+            "label": "None",
+            "value": "none"
+          },
+          {
+            "label": "CHAP",
+            "value": "chap"
+          },
+          {
+            "label": "PAP",
+            "value": "pap"
+          },
+          {
+            "label": "Both",
+            "value": "both"
+          }
+        ]
+      }
+    },
+    {
+      "key": "pdpContext.primary.auth.username",
+      "type": "input",
+      "templateOptions": {
+        "label": "CELLULAR_FORM_PRIMARY_AUTH_USERNAME",
+        "required": true
+      },
+      "hideExpression": "model.pdpContext.primary.auth.protocol === 'none'"
+    },
+    {
+      "key": "pdpContext.primary.auth.password",
+      "type": "input",
+      "templateOptions": {
+        "label": "CELLULAR_FORM_PRIMARY_AUTH_PASSWORD",
+        "required": true
+      },
+      "hideExpression": "model.pdpContext.primary.auth.protocol === 'none'"
+    },
+    {
       "key": "pdpContext.primary.apn",
       "type": "input",
       "templateOptions": {
@@ -31,6 +76,51 @@
         "required": true
       },
       "hideExpression": "!model.pdpContext.static"
+    },
+    {
+      "key": "protocol",
+      "model": "model.pdpContext.secondary.auth",
+      "type": "select",
+      "templateOptions": {
+        "label": "CELLULAR_FORM_SECONDARY_AUTH_TYPE",
+        "required": true,
+        "options": [
+          {
+            "label": "None",
+            "value": "none"
+          },
+          {
+            "label": "CHAP",
+            "value": "chap"
+          },
+          {
+            "label": "PAP",
+            "value": "pap"
+          },
+          {
+            "label": "Both",
+            "value": "both"
+          }
+        ]
+      }
+    },
+    {
+      "key": "pdpContext.secondary.auth.username",
+      "type": "input",
+      "templateOptions": {
+        "label": "CELLULAR_FORM_SECONDARY_AUTH_USERNAME",
+        "required": true
+      },
+      "hideExpression": "model.pdpContext.secondary.auth.protocol === 'none'"
+    },
+    {
+      "key": "pdpContext.secondary.auth.password",
+      "type": "input",
+      "templateOptions": {
+        "label": "CELLULAR_FORM_SECONDARY_AUTH_PASSWORD",
+        "required": true
+      },
+      "hideExpression": "model.pdpContext.secondary.auth.protocol === 'none'"
     },
     {
       "key": "pdpContext.secondary.apn",
@@ -95,7 +185,7 @@
       "hideExpression": "!model.keepalive.enable"
     },
     {
-      "key": "keepalive.reboot.enable",
+      "key": "keepalive.rebbot.enable",
       "type": "switch",
       "className": "reboot-highlight",
       "templateOptions": {
