@@ -24,6 +24,9 @@
       }
     },
     {
+      "template": "<p class=\"md-title\" md-colors=\"{color:'primary'}\">CELLULAR_FORM_LABEL_PRIMARY_SETTING</p>"
+    },
+    {
       "key": "protocol",
       "model": "model.pdpContext.primary.auth",
       "type": "select",
@@ -61,10 +64,16 @@
     },
     {
       "key": "pdpContext.primary.auth.password",
-      "type": "input",
+      "type": "password",
       "templateOptions": {
         "label": "CELLULAR_FORM_PRIMARY_AUTH_PASSWORD",
         "required": true
+      },
+      "validators": {
+        "password": {
+          "expression": "",
+          "message": ""
+        }
       },
       "hideExpression": "model.pdpContext.primary.auth.protocol === 'none'"
     },
@@ -76,6 +85,9 @@
         "required": true
       },
       "hideExpression": "!model.pdpContext.static"
+    },
+    {
+      "template": "<p class=\"md-title\" md-colors=\"{color:'primary'}\">CELLULAR_FORM_LABEL_SECONDARY_SETTING</p>"
     },
     {
       "key": "protocol",
@@ -115,10 +127,16 @@
     },
     {
       "key": "pdpContext.secondary.auth.password",
-      "type": "input",
+      "type": "password",
       "templateOptions": {
         "label": "CELLULAR_FORM_SECONDARY_AUTH_PASSWORD",
         "required": true
+      },
+      "validators": {
+        "password": {
+          "expression": "",
+          "message": ""
+        }
       },
       "hideExpression": "model.pdpContext.secondary.auth.protocol === 'none'"
     },
