@@ -24,7 +24,7 @@
       }
     },
     {
-      "template": "<p class=\"md-title\" md-colors=\"{color:'primary'}\">CELLULAR_FORM_LABEL_PRIMARY_SETTING</p>"
+      "template": "<p class=\"md-title\" md-colors=\"{color:'primary'}\">{{ 'CELLULAR_FORM_LABEL_PRIMARY_SETTING' | translate }}</p>"
     },
     {
       "key": "protocol",
@@ -87,7 +87,7 @@
       "hideExpression": "!model.pdpContext.static"
     },
     {
-      "template": "<p class=\"md-title\" md-colors=\"{color:'primary'}\">CELLULAR_FORM_LABEL_SECONDARY_SETTING</p>"
+      "template": "<p class=\"md-title\" md-colors=\"{color:'primary'}\">{{ 'CELLULAR_FORM_LABEL_SECONDARY_SETTING' | translate }}</p>"
     },
     {
       "key": "protocol",
