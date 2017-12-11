@@ -203,7 +203,7 @@
       "hideExpression": "!model.keepalive.enable"
     },
     {
-      "key": "keepalive.rebbot.enable",
+      "key": "keepalive.reboot.enable",
       "type": "switch",
       "className": "reboot-highlight",
       "templateOptions": {
