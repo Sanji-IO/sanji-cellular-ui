@@ -26,8 +26,7 @@
     "commit": "git-cz",
     "check-coverage": "istanbul check-coverage --statements 75 --branches 75 --functions 75 --lines 75",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "post-install": "webdirver-manager update"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.0",
