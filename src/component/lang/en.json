@@ -48,7 +48,7 @@
   "CELLULAR_FORM_CARRIER": "Carrier",
   "CELLULAR_FORM_APPLY": "Apply",
   "CELLULAR_FORM_SWITCH_CARRIER_MSG":
-    "This operation will take several minutes and cellular module may not be available during operation, please ensure stable power supply.",
+    "This operation will take several minutes. Ensure that the power supply to the device is stable. The cellular module may not be available during the operation.",
   "CELLULAR_FORM_CURRENT_CARRIER": "Current Carrier",
   "CELLULAR_FORM_PRIMARY_AUTH_USERNAME": "Primary Username",
   "CELLULAR_FORM_PRIMARY_AUTH_PASSWORD": "Primary Password",
