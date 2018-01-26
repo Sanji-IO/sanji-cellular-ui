@@ -58,16 +58,6 @@ export const CellularActions = ($q, cellularService) => {
 //-------------------------------------------------------------------
 // Reducers
 //-------------------------------------------------------------------
-export const cellulars = (state = [], { type, payload }) => {
-  switch (type) {
-    case GET_CELLULARS:
-      return payload || state;
-    case UPDATE_CELLULAR:
-      return state.map(data => cellular(data, { type, payload }));
-    default:
-      return state;
-  }
-};
 
 const cellular = (state, { type, payload }) => {
   switch (type) {
@@ -76,6 +66,17 @@ const cellular = (state, { type, payload }) => {
         return state;
       }
       return Object.assign({}, state, payload);
+    default:
+      return state;
+  }
+};
+
+export const cellulars = (state = [], { type, payload }) => {
+  switch (type) {
+    case GET_CELLULARS:
+      return payload || state;
+    case UPDATE_CELLULAR:
+      return state.map(data => cellular(data, { type, payload }));
     default:
       return state;
   }

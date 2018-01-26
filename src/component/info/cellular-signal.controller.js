@@ -2,7 +2,7 @@
 const $inject = [];
 class CellularSignalController {
   constructor(...injects) {
-    CellularSignalController.$inject.forEach((item, index) => this[item] = injects[index]);
+    CellularSignalController.$inject.forEach((item, index) => (this[item] = injects[index]));
   }
 }
 CellularSignalController.$inject = $inject;

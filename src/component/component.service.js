@@ -37,10 +37,13 @@ class CellularService {
 
   get() {
     const toPath = this.pathToRegexp.compile(config.get.url);
-    return this.rest.get(toPath(), this.restConfig).then(res => this._transform(res.data)).catch(err => {
-      this.exception.catcher(this.$filter('translate')(this.message.read.error))(err);
-      return this.$q.reject();
-    });
+    return this.rest
+      .get(toPath(), this.restConfig)
+      .then(res => this._transform(res.data))
+      .catch(err => {
+        this.exception.catcher(this.$filter('translate')(this.message.read.error))(err);
+        return this.$q.reject();
+      });
   }
 
   update(data) {
@@ -59,10 +62,13 @@ class CellularService {
   }
 
   getCarrier(id) {
-    return this.rest.get(`/network/cellulars/${id}/firmware`, this.restConfig).then(res => res.data).catch(err => {
-      this.exception.catcher(this.$filter('translate')(this.message.read.error))(err);
-      return this.$q.reject();
-    });
+    return this.rest
+      .get(`/network/cellulars/${id}/firmware`, this.restConfig)
+      .then(res => res.data)
+      .catch(err => {
+        this.exception.catcher(this.$filter('translate')(this.message.read.error))(err);
+        return this.$q.reject();
+      });
   }
 
   setCarrier(id, data) {
