@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const NODE_ENV = process.env.NODE_ENV;
 const BASE_PATH = process.env.BASE_PATH;
+const API_TOKEN = process.env.API_TOKEN;
 const nodeRoot = path.join(__dirname, 'node_modules');
 const appRoot = path.join(__dirname, 'src');
 const config = {
@@ -37,7 +38,8 @@ const config = {
       'process.env': {
         NODE_ENV: JSON.stringify(NODE_ENV || 'development')
       },
-      __BASE_PATH__: JSON.stringify(BASE_PATH || 'http://localhost:8000')
+      __BASE_PATH__: JSON.stringify(BASE_PATH || 'http://localhost:8000'),
+      __API_TOKEN__: JSON.stringify(API_TOKEN || '12345678')
     })
   ]
 };
