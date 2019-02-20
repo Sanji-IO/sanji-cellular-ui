@@ -66,12 +66,11 @@
       "key": "pdpContext.primary.auth.password",
       "type": "password",
       "templateOptions": {
-        "label": "CELLULAR_FORM_PRIMARY_AUTH_PASSWORD",
-        "required": true
+        "label": "CELLULAR_FORM_PRIMARY_AUTH_PASSWORD"
       },
       "validators": {
         "password": {
-          "expression": "",
+          "expression": "'*'",
           "message": ""
         }
       },
